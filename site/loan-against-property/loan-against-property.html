@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head lang=en>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width"/>
+<title>Loan Against Property Eligibility Calculator</title>
+<meta name=keywords content=""/>
+<meta name=description content=""/>
+<link href="css/styles.css" media=all rel=stylesheet type="text/css"/>
+<script src="js/jquery-1.7.2-min.js"></script>
+<script src="js/borrowing-power-calculator-lib.js"></script>
+<script src="js/data.js"></script>
+<script src="js/borrowing-power-calculator-config.js"></script>
+<script src="js/borrowing-power-calculator-app.js"></script>
+</head>
+<body>
+<script>$(window).ready(function(){loadTool();});var __loancalculator=null;var calculator=null;var loadTool=function(){__loancalculator=gbst.module("gbst.loan.app.borrowingpowercalculator");var container=$(".borrowing-power-calculator-app");container.empty();if((parent.hasOwnProperty&&parent.hasOwnProperty("setIframeHeight"))||Object.prototype.hasOwnProperty.call(parent,"setIframeHeight")){container.resize(function(e){parent.setIframeHeight(container.height());})};calculator=new __loancalculator.LoanCalculatorApp(container);calculator.init();};</script>
+<div class=borrowing-power-calculator-app></div>
+</body>
+</html>

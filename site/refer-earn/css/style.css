@@ -1,0 +1,466 @@
+g@charset "utf-8";
+/* CSS Document */
+
+
+/*
+Theme Name: Agents - Real Estate Responsive Landing Page Template  
+Version: 1.0
+Author: Conquerors Market
+Author URI: http://themeforest.net/user/conquerorsmarket
+ 
+*/
+/******************  Table of Contents  *****************************/
+/*
+
+1. GLOBAL STYLES
+2. HEADER
+3. YOUR GOAL
+5. TESTIMONIALS
+6. VIDEO DEMO
+7. FEATURES
+8. REQUEST A FREE CONSULTATION
+9. FOOTER
+10.CUSTOM MEDIA QUERIES
+
+If you having trouble in editing css. please send a mail to conquerorsmarket@gmail.com
+I will really help you
+
+*/
+
+/*========== 1. GLOBAL STYLES ==============*/
+
+
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	background: #FFF;
+	font-weight: 300;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	color: #9aa0a9;
+}
+strong, b {
+	font-weight: 600;
+}
+h1 {
+	font-size: 50px;
+	line-height: 60px;
+	margin: 25px 0;
+	font-weight: 600;
+}
+h2 {
+	font-size: 40px;
+	font-weight: 600;
+	margin: 15px 0;
+}
+h3 {
+	font-size: 30px;
+	margin: 10px 0;
+	font-weight: 600;
+}
+h4 {
+	font-size: 25px;
+	margin: 10px 0;
+}
+h5 {
+	color: #586067;
+	font-size: 21px;
+	font-weight: 700;
+	margin: 6px 0 15px;
+}
+h6 {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 10px 0;
+	color: #384047;
+}
+a {
+	color: #5173bd;
+}
+a:hover, a:focus {
+	color: #5173bd;
+}
+p {
+	line-height: 26px;
+	font-size: 16px;
+}
+/*Vertical Rythm*/
+
+.has-margin-top {
+	margin-top: 30px;
+}
+.has-margin-top-lg {
+	margin-top: 40px;
+}
+.has-margin-bottom {
+	margin-bottom: 30px;
+}
+.has-margin-bottom-sm {
+	margin-bottom: 20px;
+}
+.has-margin-vertical {
+	margin: 20px 0 30px;
+}
+.has-margin-bottom {
+	margin-bottom: 40px;
+}
+.container {
+	max-width: 1200px !important;
+	width: 100%;
+}
+/* Initial Subtle Animation*/
+
+.masthead .container {
+	animation: fadein 2s;
+	-moz-animation: fadein 2s; /* Firefox */
+	-webkit-animation: fadein 2s; /* Safari and Chrome */
+	-o-animation: fadein 2s; /* Opera */
+}
+.loading * {
+	-webkit-animation: none !important;
+	-moz-animation: none !important;
+	-ms-animation: none !important;
+	-o-animation: none !important;
+}
+ @keyframes fadein {
+ from {
+ opacity:0;
+ -webkit-transform: translateY(-30px);
+-moz-transform: translateY(-30px);
+transform: translateY(-30px);
+}
+to {
+ opacity:1;
+ -webkit-transform: translateY(0);
+ -moz-transform: translateY(0);
+ transform: translateY(0);
+}
+}
+@-moz-keyframes fadein { /* Firefox */
+ from {
+ opacity:0;
+ -webkit-transform: translateY(-30px);
+-moz-transform: translateY(-30px);
+transform: translateY(-30px);
+}
+to {
+ opacity:1;
+ -webkit-transform: translateY(0);
+ -moz-transform: translateY(0);
+ transform: translateY(0);
+}
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+ from {
+ opacity:0;
+ -webkit-transform: translateY(-30px);
+-moz-transform: translateY(-30px);
+transform: translateY(-30px);
+}
+to {
+ opacity:1;
+ -webkit-transform: translateY(0);
+ -moz-transform: translateY(0);
+ transform: translateY(0);
+}
+}
+@-o-keyframes fadein { /* Opera */
+ from {
+ opacity:0;
+ -webkit-transform: translateY(-30px);
+-moz-transform: translateY(-30px);
+transform: translateY(-30px);
+}
+to {
+ opacity:1;
+ -webkit-transform: translateY(0);
+ -moz-transform: translateY(0);
+ transform: translateY(0);
+}
+}
+/*animation ends*/
+/*=========== Hedder Part CSS===========*/
+.top_hedder {
+	background: #dddddd;
+	padding: 54px 10px 0;
+	animation: fadein 2s;
+	-moz-animation: fadein 2s;
+	-webkit-animation: fadein 2s;
+	-o-animation: fadein 2s;
+}
+.logo {
+	text-align: center;
+}
+.main_titile {
+	color: #64582c;
+	font-size: 36px;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	text-align: center;
+}
+.sub_title {
+	color: #372f11;
+	font-size: 46px;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin-top: 0;
+	text-align: center;
+}
+#underline {
+	line-height: 0;
+	margin-right: 320px;
+	text-align: right;
+}
+.shadow {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#arrow {
+	position: absolute;
+	/*right: 0px;*/
+	top: -30px;
+}
+/* Get Form */
+.form {
+	background: #fff;
+	border-radius: 3px;
+	padding: 10px 30px 15px;
+}
+input[type="text"], select {
+	border: 1px solid #dedede;
+	border-radius: 3px;
+	height: 45px;
+	margin-top: 0;
+	padding: 10px;
+	width: 100%;
+}
+input[type="submit"] {
+	background: #df4848 none repeat scroll 0 0;
+	border: 0 none;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 21px;
+	font-weight: bold;
+	height: 52px;
+	margin-top: 10px;
+	padding: 5px;
+	width: 100%;
+}
+.submit {
+	background: #df4848 none repeat scroll 0 0;
+	border: 0 none;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 21px;
+	font-weight: bold;
+	height: 52px;
+	margin-top: 10px;
+	padding: 5px;
+	width: 100%;
+	line-height: 40px;
+}
+.submit a, .submit a:hover {
+	color: #fff;
+	text-decoration: none
+}
+/* Get Form */
+/* Placeholder */
+::-moz-placeholder {
+color:#838383;
+font-size:18px;
+}
+::-webkit-input-placeholder {
+color:#838383;
+font-size:18px;
+}
+:-o-input-placeholder {
+color:#838383;
+font-size:18px;
+}
+:-ms-input-placeholder {
+color:#838383;
+font-size:18px;
+}
+/* Placeholder */
+
+#underline > img {
+	margin: -15px 0px 20px 0;
+	position: relative;
+}
+.form > img {
+	padding: 20px 0 13px;
+}
+#form-errors, #form-success {font-weight:bold;font-size:13px;}
+#form-errors{color:#AF3A36;}
+#form-success{color:#65BB65;}
+
+/*=========== Hedder Part CSS===========*/
+
+
+
+
+/*============YOUR GOAL CSS=================*/ 
+.gola {
+	padding: 40px 0 40px 0px;
+	text-align: center
+}
+.section-hed-sub {
+	color: #676767;
+	font-size: 27px;
+	font-weight: lighter;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.section-hed {
+	color: #222222;
+	font-size: 37px;
+	font-weight: bold;
+	margin-top: 0;
+	text-transform: uppercase;
+	padding-bottom: 40px;
+	text-align: center;
+}
+.gola h4 {
+	color: #555b65;
+	font-size: 22px;
+	font-weight: bold;
+	margin: 20px 0;
+}
+.gola p {
+	font-size: 16px;
+}
+/*============YOUR GOAL CSS=================*/
+
+
+/*============YOUR GOAL CSS=================*/
+
+/*============TESTIMONIALS CSS=================*/
+.testmonials {
+	background: #f7f7f7;
+	padding: 40px 0
+}
+.testmonials p {
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+	font-size: 20px;
+	font-style: italic;
+	text-align: center;
+	line-height: 35px;
+}
+.test_img h5 {
+	color: #4e5560;
+	margin: 20px 0 5px;
+}
+.test_img small {
+	font-size: 16px;
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+}
+.test_img {
+	text-align: center;
+}
+/*============TESTIMONIALS CSS=================*/
+
+
+/*============VIDEO DEMO================*/
+.video_demo {
+	padding: 40px 0;
+}
+iframe {
+	border: 0 none;
+}
+.video{ width:100%; }
+/*============VIDEO DEMO================*/
+
+
+/*============FEATURES================*/
+
+.feature {
+	padding: 40px 0
+}
+/*============FEATURES================*/
+
+/*============REQUEST A FREE CONSULTATION================*/
+.request {
+	background: #f5d76e;
+	padding: 40px 0
+}
+.request h4 {
+	font-weight: bold;
+	font-size: 33px;
+	color: #222222;
+}
+.request small {
+	font-size: 22px;
+	color: #676767;
+	font-weight: 400;
+}
+/*============REQUEST A FREE CONSULTATION================*/
+
+
+/*============FOOTER================*/
+.footer {
+	padding: 40px 0;
+	text-align: center
+}
+.footer h6 {
+	color: #acacac;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+/*============FOOTER================*/
+
+ /*Media Queries for smaller devices*/ 
+ 
+ 
+ /*============Theam Color================*/
+ .blue{ background:#1ba1e2;}
+ .yellow{ background:#66e199 ;}
+ /*============FOOTER================*/
+@media (max-width: 768px) {
+#arrow {
+	display: none;
+	position: absolute;
+	right: -60px;
+}
+ 
+.form {
+	margin: 30px 0;
+}
+.form > img {
+	width: 100%;
+}
+.sub_title {
+	font-size: 26px
+}
+.main_titile {
+	font-size: 19px;
+}
+.section-hed {
+	font-size: 26px
+}
+.section-hed-sub {
+	font-size: 19px;
+}
+.request h4 {
+	color: #222222;
+	font-size: 24px;
+	text-align: center;
+}
+.request small {
+	color: #676767;
+	display: table;
+	font-size: 18px;
+	margin: 0 auto;
+	text-align: center;
+}
+.gola img {
+	margin: 20px 0 0;
+}
+.section-hed {
+	padding-bottom: 10px
+}
+.form {
+    margin: 10px 0;
+}
+}

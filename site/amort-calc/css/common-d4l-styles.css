@@ -1,0 +1,280 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+/* CSS Document */
+body, ol,ul,li{ font-family: 'Droid Sans', sans-serif!important; font-size:16px;}
+.lac-left-box{width:663px; margin-top:5px; float:left; clear:right;}
+.lac-right-box{width:275px; margin-top:5px; float:right;}
+.breadcrum-common{margin:auto; width:970px; margin-top:11px; color:#0a8bd9;}
+.lac-form{width:100%; background:#21405f; padding:5px; border-radius:5px; margin:auto;}
+.lac-head-text{font-size: 32px !important;
+  text-transform: none; font-family:'Droid Sans', sans-serif !important;
+  color: #88a943;
+  margin-left:15px;}
+.lac-main-wrapper{ width:970px; margin:auto; border:1px solid #CCC; padding-left:5px;}
+.common-body-text{ font-family: 'Droid Sans', sans-serif!important; font-size:16px; }
+.common-sub-body-text{ font-family: 'Droid Sans', sans-serif!important; font-size:14px; }
+.common-sub-body-text a{ font-family: 'Droid Sans', sans-serif!important; font-size:14px; text-decoration:none; color:#000000; }
+.common-white-body-text{ font-family: 'Droid Sans', sans-serif!important; font-size:14px; color:#FFF; }
+.common-smaller-body-text{ font-family: 'Droid Sans', sans-serif!important; font-size:12px; }
+.common-yy{ width:90px; height:24px; margin-left:2px;}
+.common-dd{ width:45px; margin-left:2px; height:24px;}
+.common-mobile{ width:250px; height:24px; margin-left:5px;}
+.common-select{ width:200px; height:26px; }
+.common-input{ width:200px; height:24px;}
+.text_head{font-family: 'Droid Sans', sans-serif!important; font-size:16px; font-weight:bold; color:#000; width:300px; margin:0px 0px 0px 0px; padding:0px 0px 0px 0px;}
+.text_body{ padding-left:55px; font-size:19px; color:#FFFFFF; margin:0px 0px 0px 0px;}
+.commom-input_box{ width:230px;   float:left; margin:10px 0px 0px 7px; }
+.box_b{ width:300px; margin:0px 0px 0px 0px; margin-top:15px; font-family: 'Droid Sans', sans-serif!important; font-size:11px; color:#FFF;}
+.box_d{ width:300px; margin:0px 0px 0px 0px;}
+.box_c{ width:950px; margin:0px 0px 0px 0px;}
+.box_term{ width:280px;}
+.box_btn{ width:107px;  margin-left:15px;}
+.common-div-overflow{ width:100%;}
+.common-boxinteres-rate{ float:left; width:350px;}
+.common-boxinteres-rate2{ float:left; width:600px;}
+
+.btnclr {
+    background-color: #0F8EDA;
+    border: medium none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    width: 90px;
+}
+
+.form_new_box{ width:600px; padding:4px; border:thin solid #d1d1d1;
+border-radius:7px 7px 7px 7px;
+background:#fafafa; margin-left:25px; float:left; }
+
+.form_new_text{font-size:13px; color:#21405f; font-weight:bold; }
+.form_new_input{ width:220px; height:22px; border:thin solid #b2b2b2;}
+.form_new_select{ width:224px; height:24px; border:thin solid #b2b2b2;}
+
+.form_new_calulate{ width:600px; padding:0px; 
+ margin-left:25px; float:left; margin-top:15px; }
+.form_new_save{ width:600px; padding:0px; border-radius:7px 7px 7px 7px; background:#21405f; margin-top:10px; text-align:center; color:#FFF; font-size:17px; margin-left:25px; padding-top:10px; padding-bottom:10px;}
+.common-comment-wrapper{ width:970px; margin:auto;}
+.breadcrumb-text-new{ font-size:14px; font-family: 'Droid Sans', sans-serif!important;}
+.breadcrumb-text-new a{ font-size:14px; font-family: 'Droid Sans', sans-serif!important; text-decoration:none;}
+.overflow-width{ width:100%;}
+
+
+/*................new css for request-credit-card.php starts.........*/
+.rccbox{ float:left; width:239px; margin-left:2px;}
+/*................new css for request-credit-card.php ends.........*/
+/*................new css for apply-home-loans.php.........*/
+.apply-hl-form{width:960px; margin:auto; background:#7bcabd; border-radius:5px; padding-top:10px;}
+.apply-hl-input-wapper{float:left; width:183px; margin-left:35px; margin-top:5px;}
+.apply-hl-form-text{ font-family: 'Droid Sans', sans-serif!important; font-size:14px; color:#FFF;}
+.apply-hl-input{width:183px; height:24px;}
+.apply-hl-select{width:183px; height:26px;}
+.apply-hl-bank-logo{ float:left; margin-left:10px;}
+.form-head-textnew{ font-size:24px;}
+/*................new css for apply-home-loans.php ends.........*/
+
+/*new css added on 6-4-2015 start*/
+.hl_emi_term_box{ float:left; margin-top:15px;}
+.formhlwpbody-text {
+  font-family: 'Droid Sans', sans-serif!important;
+  font-size: 14px;
+  color: #333333;
+}
+.emi_cal_form { font-size:16px; font-family:'Droid Sans', sans-serif!important;
+  width: 950px;
+  float: left;
+  border-radius: 5px 5px 5px 5px;
+  background:#7bcabd;
+  margin: auto auto auto 7px;
+  padding:15px 5px 5px 5px;
+}
+.emi_input_form, .hli_input_section {
+  float: left;
+  width: 230px;
+  margin-left: 5px;
+}
+
+.heaading-plformwrappenew {
+  float: left; color:#000 !important;
+  width: 640px; font-size:16px; font-family: 'Droid Sans', sans-serif!important;
+}
+.emi_input {
+  width: 180px;
+  height: 22px;
+}
+.emi_select {
+  width: 182px;
+  height: 26px;
+}
+.emi_dd {
+  width: 43px;
+  height: 18px;
+}
+.emi_yy {
+  width: 60px;
+  height: 18px;
+}
+.emi_process_box {
+  float: left;
+  width: 623px;
+  padding-top: 4px;
+}
+.emi_right_box {
+  float: right;
+  width: 340px;
+  padding-top: 8px;
+}
+.emi_cal_table {font-size:16px; font-family: 'Droid Sans', sans-serif!important;
+  width: 700px;
+  text-align: center;
+  margin: auto;
+}
+.responsive_ad {
+  display: none;
+  margin-top: -50px;
+}
+
+.emi_cal_wrapper, .emi_cal_titel, .form_emi_box {
+  width: 970px; font-size:16px; font-family: 'Droid Sans', sans-serif!important;
+  margin: auto;
+}
+.emi_cal_text { font-size:16px; font-family:'Droid Sans', sans-serif!important;
+  width: 940px;
+  margin: auto;
+}
+.emi_tbl_dis{ width:800px; margin:auto; font-size:16px; font-family: 'Droid Sans', sans-serif!important;}
+/* new css added on 6-4-2015 end */
+.emi_mob_input{width:160px; height:22px; }
+.hl_emi_get_quote {
+  float: right;
+  width: 151px;}
+.mobile-input{ width:130px; }
+.coborrower{ width:90%; padding:5px; margin-top:10px; font-family: 'Droid Sans', sans-serif!important; font-size:12px; color:#000;}
+.headtextedubox{ float:left; width:680px;}
+.apply-edu-button{ float:left; width:172px;}
+.coapplicant-bx{ float:left;}
+.btnboxedu{ float:left; width:172px; margin-top:10px;}
+
+.agent-form{width:460px; margin:10px auto; padding:5px; border-radius:5px; border:#a2d7f6 solid 3px; background:#f6fcff;}
+.common-from-cont-wrapper{ width:652px; margin:auto; border:thin solid #d4d4d4; border-radius:10px;}
+.agent-form-archive{width:652px; margin:10px auto; padding:5px; border-radius:5px; border:#a2d7f6 solid 3px; background:#f6fcff;}
+
+ 
+@media screen and (max-width: 768px) {
+.lac-left-box{width:95%; margin:auto;}
+.lac-right-box{width:275px; margin-top:5px; float:none;}
+.breadcrum-common{margin:auto; width:100%; margin-top:75px; color:#0a8bd9;}
+.lac-form{ width:95%; background:#21405f; padding:5px; border-radius:5px; margin:auto;}
+.lac-head-text{font-size:24px;
+  text-transform: none;
+  color: #88a943;
+  margin-left: 15px;}
+.lac-main-wrapper{ width:90%; margin:auto;}
+.common-body-text{ font-family: 'Droid Sans', sans-serif!important; font-size:16px; }
+.common-yy{ width:30%; height:24px; margin-right:0px;}
+.common-dd{ width:30%; height:24px; margin-right:0px;}
+.common-mobile{ width:98%; height:24px; margin-left:5px;}
+.common-select{ width:100%; height:26px; }
+.common-input{ width:100%; height:24px;}
+.commom-input_box{ width:98%; float:left; margin:10px 0px 0px 7px; } 
+.box_b{ width:98% !important; margin:0px 0px 0px 0px; margin-top:15px; font-size:11px; color:#FFF;}
+.box_d{ width:98% !important; margin:0px 0px 0px 0px;}
+.box_c{ width:98% !important; margin:0px 0px 0px 0px;}
+.common-div-overflow{ width:90%; height:350px; overflow:auto;}
+.common-boxinteres-rate{ float:none; width:95%;}
+.common-boxinteres-rate2{ float:left; width:95%;}
+.form_new_box{ width:90%; padding:4px; border:thin solid #d1d1d1;
+border-radius:7px 7px 7px 7px;background:#fafafa; margin-left:0px;}
+.form_new_input{ width:98%; height:22px; border:thin solid #b2b2b2;}
+.form_new_select{ width:99%; height:24px; border:thin solid #b2b2b2;}
+.common-comment-wrapper{ width:100%; margin:auto; display:none!important;}
+.overflow-width{width:99%; overflow:scroll; margin:auto;}
+.textfield{ width:300px;}
+/*................new css for request-credit-card.php starts.........*/
+.rccbox{ float:none; width:239px; margin:auto;}	
+/*................new css for request-credit-card.php ends.........*/
+/*................new css for apply-home-loans.php.........*/
+.apply-hl-form{width:95%; margin:auto; background:#7bcabd; border-radius:5px;}
+.apply-hl-input-wapper{float:none; width:90%; margin:auto;}
+.apply-hl-form-text{ font-family: 'Droid Sans', sans-serif!important; font-size:14px; color:#FFF;}
+.apply-hl-input{width:95%; height:20px;}
+.apply-hl-select{width:95%; height:24px;}
+.apply-hl-bank-logo{ float:none; margin:10px auto; width:150px;}
+p{ padding:0px 0px 0px 0px; margin:0px 0px 0px 0px;}
+/*new css added on 6-4-2015 start*/
+
+.emi_cal_form {
+  width:95%;
+  float:none;
+  border-radius: 5px 5px 5px 5px;
+  background:#7bcabd;
+  margin: auto;
+  padding: 5px;
+}
+.emi_input_form, .hli_input_section {
+  float: none;
+  width:98%;
+  margin-left: 5px;
+}
+
+.heaading-plformwrappenew {
+  float:none;
+  width:98%; margin:auto;
+}
+.emi_input {
+  width:98%;
+  height: 22px;
+}
+.emi_select {
+  width:98%;
+  height: 24px;
+}
+.emi_dd {
+  width: 30%;
+  height: 18px;
+}
+.emi_yy {
+  width: 30%;
+  height: 18px;
+}
+.emi_process_box {
+  float:none;
+  width:98%;
+  padding-top: 4px;
+}
+.emi_right_box {
+  float:none;
+  width:98%;
+  padding-top: 8px;
+}
+.emi_cal_table {
+  width:98%;
+  text-align: center;
+  margin: auto;
+}
+.responsive_ad {
+  display: none;
+  margin-top: -50px;
+}
+
+.emi_cal_wrapper, .emi_cal_titel, .form_emi_box {
+  width:98%;
+  margin: auto;
+}
+.emi_cal_text {
+  width:90%;  margin: auto;
+}
+.emi_mob_input{width:90%; height:22px; }
+.emi_tbl_dis{ width:98%; margin:auto;}
+.loans_Silder{ display:none;}
+.textfield{ width:100%;}
+.headtextedubox{ float:left; width:90%;}
+.apply-edu-button{ float:left; width:172px;}
+.agent-form{width:95%; margin:auto; padding:5px; border-radius:5px; border:#a2d7f6 solid 3px; background:#f6fcff;}
+.data-middle_wrapper{ width:98%;}
+.common-from-cont-wrapper{ width:95%; margin:auto; border:thin solid #d4d4d4; border-radius:10px;}
+.agent-form-archive{width:96%px; margin:10px auto; padding:5px; border-radius:5px; border:#a2d7f6 solid 3px; background:#f6fcff;}
+}
+/* new css added on 6-4-2015 end */
+/*................new css for apply-home-loans.php ends.........*/}
+

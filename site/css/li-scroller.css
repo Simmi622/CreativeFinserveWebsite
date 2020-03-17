@@ -1,0 +1,6 @@
+.tickercontainer{height:25px;margin:0;padding:0;overflow:hidden;background-color:#FF9;border:dashed 1px #F00;}
+.tickercontainer .mask{position:relative;left:10px;overflow:hidden;}
+ul.newsticker{position:relative;left:750px;list-style-type:none;font-size:14px;font-weight:bold;color:#000;margin:0;padding:0;}
+ul.newsticker li{float:left;margin:0;padding:0;margin-top:2px;}
+ul.newsticker a{white-space:nowrap;padding:0;color:#000;font:bold 10px Verdana;margin:0 50px 0 0;}
+ul.newsticker span{margin:0 10px 0 0;}

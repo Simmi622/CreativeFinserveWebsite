@@ -1,0 +1,139 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+body{ margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; font-family:'Droid Sans', sans-serif; font-size:16px; color:#000000;}
+.red{color:red}
+h1,h2{font-family: "Droid Sans",sans-serif;color:#000;margin:0;padding:0}
+.text11{font-family:'Droid Sans', sans-serif!important;font-size:16px;font-weight:400;font-variant:normal;color:#000;text-decoration:none}
+.text9{font-family:'Droid Sans', sans-serif!important;font-size:14px;font-weight:400;font-variant:normal;color:#697e94;text-decoration:none}
+.text12{font-family:'Droid Sans', sans-serif!important;font-size:14px;font-weight:400;font-variant:normal;color:#fff;text-decoration:none}
+.text{font-family: "Droid Sans",sans-serif;font-size:18px;font-weight:400;font-variant:normal;color:#005399;text-decoration:none;importurlhttp://fonts.googleapis.com/css?family=Droid+Serif)}
+.text2{font-family: "Droid Sans",sans-serif;font-size:18px;font-weight:400;font-variant:normal;color:#fff;text-decoration:none;font-style:italic;importurlhttp://fonts.googleapis.com/css?family=Droid+Serif)}
+.text3{font-family:'Droid Sans', sans-serif;font-size:12px;font-weight:400;font-variant:normal;text-decoration:none;}
+a.btn:hover{font-family:'Droid Sans', sans-serif;font-size:14px;font-variant:normal;color:#203f5f;text-decoration:none;importurlhttp://fonts.googleapis.com/css?family=Droid+Sans);padding:5px 12px}
+.text4{font-family:'Droid Sans', sans-serif;font-size:10px;font-weight:700;font-variant:normal;color:#fff;text-decoration:none;text-transform:uppercase;importurlhttp://fonts.googleapis.com/css?family=Droid+Sans)}
+.textbox{font-family:'Droid Sans', sans-serif!important;font-size:14px;font-weight:400;color:#666;text-decoration:none;height:18px;width:153px;border:none;margin-top:7px;margin-left:30px}
+.font{font-family: "Droid Sans",sans-serif;font-size:12px;font-weight:400;font-variant:normal;color:#000;text-decoration:none;font-style:italic;importurlhttp://fonts.googleapis.com/css?family=Droid+Serif)}
+.font2{font-family:'Droid Sans', sans-serif;font-size:16px;font-weight:400;font-variant:normal;color:#000;text-decoration:none;importurlhttp://fonts.googleapis.com/css?family=Droid+Sans)}
+ul.menu{list-style:none;margin:0;padding:0}
+ul.menu *{margin:0;padding:0}
+ul.menu a{display:block;color:#000;text-decoration:none}
+ul.menu li{position:relative;float:left;margin-right:2px}
+ul.menu ul{position:absolute;top:30px;left:0;background:#d1d1d1;display:none;opacity:0;list-style:none}
+ul.menu ul li{position:relative;border:1px solid #aaa;border-top:none;width:258px;margin:0}
+ul.menu ul li a{display:block;background-color:#fff;padding:3px 7px 5px}
+ul.menu ul ul{left:198px;top:-1px}
+ul.menu .menulink{border:1px solid #aaa;font-weight:700;background-color:#c5c5c5;width:234px;padding:5px 7px 7px}
+ul.menu .sub{background-color:#fff;width:266px;height:8px}
+ul.menu .topline{border-top:1px solid #aaa;background-color:#fff}
+.hintanchor{position:absolute;background-color:#F5FCE1;width:175px;border:1px solid #7F9D27;font:normal 11px Verdana;color:#F33;line-height:18px;z-index:100;border-right:3px solid #7F9D27;border-bottom:3px solid #7F9D27;padding:3px}
+.hintanchorqa{  background: none repeat scroll 0 0 #fff;
+    color: #f00 !important;
+    font-size: 11px;
+    padding: 0 5px;}
+.brdr5{border:5px solid #a2d7f6;background:#f6fcff}
+.frmtxt{font-family: "Droid Sans",sans-serif;font-size:16px;font-weight:400;text-align:left;color:#000}
+.frmbldtxt{font-family: "Droid Sans",sans-serif;font-size:11px;font-weight:700;text-align:left}
+#txt ul li{background:url(http://www.bimadeals.com/new-images/blk-aro.gif) no-repeat 0 4px;list-style-type:none;padding:0 0 4px 15px}
+.txtbg{background-image:url(http://www.bimadeals.com/new-images/shd-bg.jpg);width:446px;height:20px;margin-top:12px;margin-bottom:6px;line-height:20px;background-repeat:no-repeat;background-position:left;text-align:left;text-indent:2px;font-weight:700}
+.tbl_txt{color:#373737;font-family: "Droid Sans",sans-serif;font-size:11px;padding:2px}
+.tbl_blutxt{color:#012743;font-family: "Droid Sans",sans-serif;font-size:11px;padding:2px}
+.tblwt_txt{color:#FFF;font-family: "Droid Sans",sans-serif;font-size:11px;font-weight:700;padding:2px}
+.lfttxtbar h1{font-family: "Droid Sans",sans-serif;font-size:16px;text-align:center;color:#443133;font-weight:700;margin:0 0 10px;padding:15px 0 3px}
+.lfttxtbar ul li{background:url(http://www.bimadeals.com/new-images/blk-aro.gif) no-repeat 0 4px;list-style-type:none;padding:0 0 4px 10px}
+.lfttxtbar ul li a{font-family: "Droid Sans",sans-serif;font-size:11px;color:red;text-decoration:none}
+.lfttxtbar span{font-family: "Droid Sans",sans-serif;font-size:11px;color:#373737}
+.lfttxtbar span a:hover{color:#1c50b0;text-decoration:underline}
+.crdtext ul{margin:2px 0 0;padding:2px 0 0}
+.crdtext ul li{background:url(http://www.deal4loans.com/new-images/bt-arrow.gif) no-repeat 5px 5px!important;list-style-type:none;margin-right:5px;font-family: "Droid Sans",sans-serif;font-size:11px;line-height:15px;text-align:left;color:#492704;padding:0 0 4px}
+.crdbg{background-image:url(http://www.deal4loans.com/new-images/crds-bg.gif);background-repeat:no-repeat;width:240px;height:675px}
+.crdhorizonbg{background-image:url(/new-images/crds-h-bg.gif);background-repeat:no-repeat;text-align:left;padding-left:15px;color:#5e3307;width:960px;height:26px;font-size:11px;font-weight:700}
+.crdhorizonbg a{color:#5e3307}
+.crdhorizonbg a:hover{color:#5e3307;text-decoration:underline}
+.yelobordr{border-left:1px solid #ecd77b;border-right:1px solid #ecd77b;padding:10px 10px 0}
+.crdbold{font-family: "Droid Sans",sans-serif;font-size:12px;font-weight:700;padding-left:5px;color:#5e3307;text-align:left}
+.intrl_txt{width:970px;margin:1px auto auto}
+.left_cntnt{width:663px;height:33px;margin-top:0;float:left;clear:right}
+.left_cntnt_hdr{width:663px;height:33px;margin-top:25px;float:left;clear:right}
+.intrl_txt a{text-decoration:none;color:#1C50B0}
+.intrl_txt a:hover{text-decoration:underline;color:#05132D}
+a.text12:hover,a.text3:hover,#txt ul li a:hover,.lfttxtbar ul li a:hover{text-decoration:underline}
+a.btn:link,a.btn:visited{font-family:'Droid Sans', sans-serif;font-size:14px;font-variant:normal;color:#588f27;text-decoration:none;importurlhttp://fonts.googleapis.com/css?family=Droid+Sans);padding:5px 12px}
+#txt a,.lfttxtbar a{font-family: "Droid Sans",sans-serif;font-size:11px;line-height:15px;color:#1c50b0;text-decoration:none}
+#txt a:hover,.lfttxtbar a:hover{font-family: "Droid Sans",sans-serif;font-size:16px;line-height:15px;color:#1c50b0;text-decoration:underline}
+#txt ul,.lfttxtbar ul{margin:5px 0 0;padding:5px 0 0}
+#txt ul li a,.lfttxtbar span a{font-family: "Droid Sans",sans-serif;font-size:16px;color:#1c50b0;text-decoration:none}
+.crdbhdng,.crdbhdng a{font-family: "Droid Sans",sans-serif; font-size:11px;font-weight:700;color:#5e3307;text-align:center}
+
+
+.table_bgcolor_Border{ background:#6FC0F0;}
+.table_bgcolor{ background:#B9E3FC;	}
+.td_border4{ border:1px solid #B9E3FC; padding:3px}
+.td_border3{ border-bottom:1px solid #B9E3FC; border-right:1px solid #B9E3FC;  border-top:1px solid #B9E3FC;  padding:3px}
+.td_border_lrb{border-left:1px solid #B9E3FC; border-right:1px solid #B9E3FC;  border-bottom:1px solid #B9E3FC;  padding:3px}
+.td_border_rb{border-right:1px solid #B9E3FC;  border-bottom:1px solid #B9E3FC;  padding:3px}
+
+
+.common-div-overflow {
+    width: 100%;
+}
+
+.common-bread-crumb { width:970px; margin:0px 0px 0px 0px;
+    color: #666;
+    font-family: "Droid Sans",sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.common-bread-crumb  a{ color:#1c50b0;}
+.d4l-h1{ width:100%; margin-top:0px; float:left; clear:right; font-size:28px; text-transform:none;}
+
+.get-quotebtn{ background: #06b2a0;
+    width: 110px;
+    border: solid 2px #FFF;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 39px;
+	margin:5px auto;
+	color:#FFF;
+}
+.rightpanel-background{ background:#0e79b9; border-radius:5px; padding:5px 0 0 ; font-size:14px; color:#FFF; }
+.h2-right-panel{ color:#FFF;  font-family: "Droid Sans",sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0px 0 5px 0;
+}
+.right-panel-termtext{ font-size:12px;}
+
+.d4l-side-input {
+    height: 20px;
+    width: 94%;
+}
+
+.d4l-side-Mobi {
+    height: 20px;
+    width: 77%;
+}
+
+.d4l-side-select {
+    height: 25px;
+    width: 97%;
+}
+
+.leftnewwrapper{ float:left; width:695px;}
+.newright-panel{ float:right; width:275px;}
+@media screen and (max-width:768px){.intrl_txt{width:100%;margin:1px auto auto}
+.newright-panel{ float:none; width:275px; margin:auto;}
+.leftnewwrapper{ float:none; width:95%; margin:auto;}
+
+.common-div-overflow {
+  width: 99%;
+  height: 350px;
+  overflow: auto;
+}
+.common-bread-crumb { width:95%; margin:0px 0px 0px 0px;
+    color: #666;
+    font-family: "Droid Sans",sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+}

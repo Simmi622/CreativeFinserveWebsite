@@ -1,0 +1,2738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)https://credila.net/help/tranch_disb_request.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Credila's Student Loan Intranet System</title>
+
+
+
+<script language="javascript" src="./credila disb_files/num_to_word.js.download"></script>
+<script language="javascript" src="./credila disb_files/blank_check.js.download"></script>
+<script type="text/javascript" src="./credila disb_files/jquery-1.2.1.pack.js.download"></script>  
+ <script type="text/javascript" src="./credila disb_files/jquery-1.4.3.min.js.download"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+    function MM_swapImage() { //v3.0
+        var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+            if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+
+    function MM_preloadImages() { //v3.0
+        var d = document; if (d.images) {
+            if (!d.MM_p) d.MM_p = new Array();
+            var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+        }
+    }
+
+//-->
+</script>
+<script language="JavaScript" src="./credila disb_files/date-picker.js.download"></script>
+<link rel="stylesheet" type="text/css" href="./credila disb_files/epoch_styles.css">
+<script language="javascript" src="./credila disb_files/blank_check.js.download"></script>
+<script language="javascript">
+<!--
+
+    function MM_swapImgRestore() { //v3.0
+        var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+
+    function MM_findObj(n, d) { //v4.01
+        var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+            d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+        }
+        if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n); return x;
+    }
+
+
+
+
+    function validate() {
+        var err = 0;
+       // alert(err);
+       
+
+        if (document.form1.modepay1[0].checked == false && document.form1.modepay1[1].checked == false && document.form1.modepay1[2].checked == false) {
+
+            var radioflag = 1;
+        }
+        if (document.form1.modepay2wire.checked == false && document.form1.modepay2forex.checked == false && document.form1.modepay2refin.checked == false) {
+
+            var chkboxflag = 1;
+        }
+        if (radioflag == 1 && chkboxflag == 1)
+        {   alert("Please  select mode of payment.");
+        err = 1;
+        return false;
+        }
+
+        if (document.form1.modepay1[0].checked == true && document.form1.modepay1[1].checked == true && document.form1.modepay1[2].checked == true) {
+            if (document.form1.ddpayee1amt.value == "" && document.form1.ddpayee1amt_us.value == "") {
+                alert("Please enter DD amount in Rs. or $")
+                document.form1.ddpayee1amt.focus();
+                err = 1;
+                return false;
+            }
+        }
+
+            if (document.form1.modepay2wire.checked == true) {
+                if (document.form1.wirepayee2amt.value == "" && document.form1.wirepayee2amt_us.value == "") {
+                    alert("Please enter amount in Rs. or $")
+                    document.form1.wirepayee2amt.focus();
+                    err = 1;
+                    return false;
+                }
+            }
+
+            if (document.form1.modepay2forex.checked == true) {
+                if (document.form1.forexpayee2amt.value == "" && document.form1.forexpayee2amt_us.value == "") {
+                    alert("Please enter amount in Rs. or $")
+                    document.form1.forexpayee2amt.focus();
+                    err = 1;
+                    return false;
+                }
+            }
+
+            if (document.form1.modepay2refin.checked == true) {
+                if (document.form1.refinpayee2amt.value == "" && document.form1.refinpayee2amt_us.value == "") {
+                    alert("Please enter amount in Rs. or $")
+                    document.form1.refinpayee2amt.focus();
+                    err = 1;
+                    return false;
+                }
+            }
+
+            if (document.form1.modepay1[0].checked == true) {
+                if (document.form1.ddpayee1name.value == "") {
+                    alert("Please enter DD payee name.");
+                    document.form1.ddpayee1name.focus();
+                    err = 1;
+                    return false;
+
+                }
+            }
+
+            if (document.form1.modepay1[1].checked == true) {
+                if (document.form1.tui_wirebankname.value == "") {
+                    alert("Please enter bank name.");
+                    document.form1.tui_wirebankname.focus();
+                    err = 1;
+                    return false;
+
+                }
+                 if (document.form1.tui_wireaddress.value == "") {
+                    alert("Please enter bank address.");
+                    document.form1.tui_wireaddress.focus();
+                    err = 1;
+                    return false;
+
+                }
+                 if (document.form1.tui_wirebankcity.value == "") {
+                    alert("Please enter bank city.");
+                    document.form1.tui_wirebankcity.focus();
+                    err = 1;
+                    return false;
+
+                }
+                 if (document.form1.tui_wirebankstate.value == "") {
+                    alert("Please enter bank state.");
+                    document.form1.tui_wirebankstate.focus();
+                    err = 1;
+                    return false;
+
+                }
+                 if (document.form1.tui_wirebankcountry.value == "") {
+                    alert("Please enter bank country.");
+                    document.form1.tui_wirebankcountry.focus();
+                    err = 1;
+                    return false;
+
+                }
+                 if (document.form1.tui_wireaccno.value == "") {
+                    alert("Please enter account no.");
+                    document.form1.tui_wireaccno.focus();
+                    err = 1;
+                    return false;
+
+                }
+                  if (document.form1.tui_wirerouting.value == "") {
+                    alert("Please enter routing no.");
+                    document.form1.tui_wirerouting.focus();
+                    err = 1;
+                    return false;
+
+                }
+                  if (document.form1.tui_wireswift.value == "") {
+                    alert("Please enter swift code.");
+                    document.form1.tui_wireswift.focus();
+                    err = 1;
+                    return false;
+
+                }
+                  
+           
+            }
+
+            if (document.form1.modepay1[2].checked == true) {
+                if (document.form1.tui_refinname.value == "") {
+                    alert("Please enter beneficiary name.");
+                    document.form1.tui_refinname.focus();
+                    err = 1;
+                    return false;
+
+                }
+
+                if (document.form1.tui_refinbank.value == "") {
+                    alert("Please enter bank name.");
+                    document.form1.tui_refinbank.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.tui_refinaccno.value == "") {
+                    alert("Please enter account no.");
+                    document.form1.tui_refinaccno.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.tui_refinifsc.value == "") {
+                    alert("Please enter IFSC code.");
+                    document.form1.tui_refinifsc.focus();
+                    err = 1;
+                    return false;
+
+                }
+            }
+
+            if (document.form1.modepay2wire.checked == true) {
+                if (document.form1.exp_wirebankname.value == "") {
+                    alert("Please enter bank name.");
+                    document.form1.exp_wirebankname.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wireaddress.value == "") {
+                    alert("Please enter bank address.");
+                    document.form1.exp_wireaddress.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wirebankcity.value == "") {
+                    alert("Please enter bank city.");
+                    document.form1.exp_wirebankcity.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wirebankstate.value == "") {
+                    alert("Please enter bank state.");
+                    document.form1.exp_wirebankstate.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wirebankcountry.value == "") {
+                    alert("Please enter bank country.");
+                    document.form1.exp_wirebankcountry.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wireaccno.value == "") {
+                    alert("Please enter account no.");
+                    document.form1.exp_wireaccno.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wirerouting.value == "") {
+                    alert("Please enter routing no.");
+                    document.form1.exp_wirerouting.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_wireswift.value == "") {
+                    alert("Please enter swift code.");
+                    document.form1.exp_wireswift.focus();
+                    err = 1;
+                    return false;
+
+                }
+
+
+            }
+
+            if (document.form1.modepay2refin.checked == true) {
+                if (document.form1.exp_refinname.value == "") {
+                    alert("Please enter beneficiary name.");
+                    document.form1.exp_refinname.focus();
+                    err = 1;
+                    return false;
+
+                }
+
+                if (document.form1.exp_refinbank.value == "") {
+                    alert("Please enter bank name.");
+                    document.form1.exp_refinbank.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_refinaccno.value == "") {
+                    alert("Please enter account no.");
+                    document.form1.exp_refinaccno.focus();
+                    err = 1;
+                    return false;
+
+                }
+                if (document.form1.exp_refinifsc.value == "") {
+                    alert("Please enter IFSC code.");
+                    document.form1.exp_refinifsc.focus();
+                    err = 1;
+                    return false;
+
+                }
+            }
+
+            if (document.form1.temadd.value.length == 0) {
+                alert("Please enter Address.");
+                err = 1;
+                return false;
+            }
+
+            if (document.form1.temcity.value == "") {
+                alert("Please enter City.");
+                err = 1;
+                return false;
+            }
+            if (document.form1.temcity.value == "") {
+                alert("Please enter City.");
+                err = 1;
+                return false;
+            }
+            if (document.form1.temphno.value == "") {
+                alert("Please enter Phone No..");
+                err = 1;
+                return false;
+            }
+
+           
+            if (document.form1.email.value == "" ) {
+                alert("Please enter email.");
+                err = 1;
+                return false;
+            }
+            if (document.form1.datedisbursed.value == "") {
+                alert("Please enter disbursement request date.");
+                document.form1.datedisbursed.focus();
+                err = 1;
+                return false;
+            }
+
+          
+            //check back date  and futureupto 7 days
+            var disdate = document.form1.datedisbursed.value;
+            if (disdate != "") {
+                var disdate1 = disdate.split("/");
+                disdate1day = disdate1[0];
+                disdate1month = disdate1[1] - 1;
+                disdate1year = disdate1[2];
+
+                    var newdisdate = new Date(disdate1year, disdate1month, disdate1day, 00, 00);
+                    var today = new Date();
+                    var date = new Date();
+                    var newdisdate2 = date.setDate(date.getDate() + 7);
+                   
+                    if (newdisdate < today) {
+                        alert("Please enter future date.");
+                        document.form1.datedisbursed.value = "";
+                        document.form1.datedisbursed.focus();
+                        err = 1;
+                        return false;
+                    }
+                    if (newdisdate > newdisdate2) {
+                        alert("Requeseted date can be maximum 7 days from today.");
+                        document.form1.datedisbursed.value = "";
+                        document.form1.datedisbursed.focus();
+                        err = 1;
+                        return false;
+                    }
+
+                }
+                if (document.form1.agree.checked == false) {
+                    alert("Please agree the conditions");
+                    document.form1.agree.focus();
+                    err = 1;
+                    return false;
+                }
+
+                if (err == 0) {
+                    FillamtTotal();
+            document.form1.submit();
+        }
+    }
+
+
+
+
+
+    function fnenable(elt, elt1, elt2) {
+       // elt.checked = !elt.isChecked;
+        if (elt.checked == true) {
+            elt1.disabled = false;
+            elt2.disabled = false;
+        }
+        else {
+            elt1.value = "";
+            elt2.value = "";
+            elt1.disabled = true;
+            elt2.disabled = true;
+        }
+    }
+
+
+    function fnshowpayee(elt) {
+        elt.checked = !elt.isChecked;
+       
+        if (elt.checked == true) {
+            if (elt.value == "DEMAND_DRAFT") {
+                document.getElementById("tuidiv1").style.display = "block";
+
+             //   document.form1.tui_wirebankname.value = "";
+              //  document.form1.tui_wireaddress.value = "";
+              //  document.form1.tui_wirebankcity.value = "";
+              //  document.form1.tui_wirebankstate.value = "";
+              //  document.form1.tui_wirebankzip.value = "";
+               // document.form1.tui_wirebankcountry.value = "";
+               // document.form1.tui_wireaccno.value = "";
+              //  document.form1.tui_wirerouting.value = "";
+              //  document.form1.tui_wireswift.value = "";
+                document.getElementById("tuidiv2").style.display = "none";
+
+               // document.form1.tui_refinname.value = "";
+               // document.form1.tui_refinbank.value = "";
+                //document.form1.tui_refinaccno.value = "";
+               // document.form1.tui_refinifsc.value = "";
+                document.getElementById("tuidiv3").style.display = "none";
+            
+            }
+           
+            if (elt.value == "WIRE_TRANSFER") {
+                document.getElementById("tuidiv2").style.display = "block";
+
+                document.form1.ddpayee1name.value = "";
+
+                document.getElementById("tuidiv1").style.display = "none";
+
+
+
+              //  document.form1.tui_refinname.value = "";
+              //  document.form1.tui_refinbank.value = "";
+              //  document.form1.tui_refinaccno.value = "";
+              //  document.form1.tui_refinifsc.value = "";
+                document.getElementById("tuidiv3").style.display = "none";
+            }
+            if (elt.value == "REFINANCE") {
+                document.getElementById("tuidiv3").style.display = "block";
+
+                document.form1.ddpayee1name.value = "";
+
+                document.getElementById("tuidiv1").style.display = "none";
+
+              //  document.form1.tui_wirebankname.value = "";
+              //  document.form1.tui_wireaddress.value = "";
+              //  document.form1.tui_wirebankcity.value = "";
+              //  document.form1.tui_wirebankstate.value = "";
+              //  document.form1.tui_wirebankzip.value = "";
+              //  document.form1.tui_wirebankcountry.value = "";
+              //  document.form1.tui_wireaccno.value = "";
+              //  document.form1.tui_wirerouting.value = "";
+              //  document.form1.tui_wireswift.value = "";
+                document.getElementById("tuidiv2").style.display = "none";
+            }
+        }
+        else {
+            document.form1.ddpayee1amt.value = "";
+            document.form1.ddpayee1amt_us.value = "";
+            document.getElementById("tuidiv1").style.display = "none";
+            document.getElementById("tuidiv2").style.display = "none";
+            document.getElementById("tuidiv3").style.display = "none";
+
+        }
+    }
+
+
+    function fnshowpayee2wire(elt) {
+        if (elt.checked == true) {
+            document.getElementById("expdiv1").style.display = "block";
+        }
+        else {
+           // document.form1.exp_wirebankname.value = "";
+           // document.form1.exp_wireaddress.value = "";
+           // document.form1.exp_wirebankcity.value = "";
+           // document.form1.exp_wirebankstate.value = "";
+           // document.form1.exp_wirebankzip.value = "";
+           // document.form1.exp_wirebankcountry.value = "";
+           // document.form1.exp_wireaccno.value = "";
+           // document.form1.exp_wirerouting.value = "";
+           // document.form1.exp_wireswift.value = "";
+            document.getElementById("expdiv1").style.display = "none";
+        }
+    }
+
+    function fnshowpayee2forex(elt) {
+        if (elt.checked == true) {
+            document.getElementById("expdiv2").style.display = "block";
+
+        }
+        else {
+           // document.form1.exp_cardname.value = "";
+           // document.form1.exp_cardno.value = "";
+            document.getElementById("expdiv2").style.display = "none";
+        }
+    }
+
+    function fnshowpayee2refin(elt) {
+        if (elt.checked == true) {
+            document.getElementById("expdiv3").style.display = "block";
+        }
+        else {
+            //document.form1.exp_refinname.value = "";
+           // document.form1.exp_refinbank.value = "";
+           // document.form1.exp_refinaccno.value = "";
+            //document.form1.exp_refinifsc.value = "";
+            document.getElementById("expdiv3").style.display = "none";
+        }
+
+    }
+
+    function fnshowamt2(radio, divpur, modepay, modepayus, div2, div3, mode2, modeus2, mode3, modeus3) {
+        if (radio.checked == true) {
+            document.getElementById(divpur).style.display = "block";
+
+
+        }
+        else {
+            modepay.value = "";
+            modepayus.value = "";
+            document.getElementById(divpur).style.display = "none";
+
+        }
+    }
+
+
+    //Zip code size limit
+ 
+    function chk_pin(obj) {
+            var digits = "0123456789";
+                    var temp;
+                    if (obj.value.length > 5){
+                            alert("Zip Code cannot be greater than 5 digits.");
+                            obj.focus();
+                            return false;
+                          }
+                        else
+                             {
+                              for (var i = 0; i < obj.value.length; i++) 
+                                    {
+                                        temp = obj.value.substring(i, i + 1);
+                                        if (digits.indexOf(temp) == -1)
+                                         {
+                                            alert("Zip Code cannot be Blank or Character ");
+                                            obj.focus();
+                                            return false;
+                                        }
+                                     }
+                             }
+ 
+
+       return true;
+    }
+
+    //phone size limit
+
+    function chk_phone(obj) {
+        
+        var std1 = document.form1.stdpermanent.value.length;
+        var std2 = document.form1.stdpermanent2.value.length;
+        var temphno = document.form1.temphno.value.length;
+        
+        if (parseFloat(std1) + parseFloat(std2) + parseFloat(temphno) < 10) {
+            alert("Invalid format.Please enter Phone No. in USA format 000-000-0000.");
+            document.form1.stdpermanent.value = "";
+            document.form1.stdpermanent2.value = "";
+            document.form1.temphno.value = "";
+            return false;
+        }
+       
+
+        return true;
+    }
+
+    function AllowNumeric() {
+        var c = event.keyCode;
+        busy = 1;
+        // alert(c);
+
+
+        if (((c >= 31 && c < 48 && c != 45 && c != 46) || (c > 57) || (c == 32))) {
+            event.keyCode = 0;
+            alert("Please enter Numeric Value.");
+            setTimeout('busy=0', 1)
+        }
+        else {
+            event.keyCode = event.keyCode;
+            busy = 0;
+        }
+
+    }
+    var busy = 0;
+    function validateEmail(element) {
+        var flag = false;
+        if (busy) return;
+        busy = 1;
+
+        if (element != null && element.value != "") {
+            //var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(element.value.toLowerCase())) {
+                flag = true
+            }
+            else
+                flag = false;
+
+            if (flag == true) {
+                //alert(true);
+                //emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+[a-zA-Z]+[a-zA-Z0-9-][.co{0,1}|.gov{0,1}]+\.[a-zA-Z]{2,4}$/;
+                emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+[.inc{0,1}|.co{0,1}|.gov{0,1}]+\.[a-zA-Z]{2,4}$/;
+                if (!emailPattern.test(element.value.toLowerCase())) {
+                    flag = true;
+                }
+                else
+                    flag = false;
+            }
+
+            if (flag == true) {
+
+                alert("Enter Valid Email Id");
+                element.focus;
+                element.select();
+                setTimeout('busy=0', 1);
+                return false;
+            }
+            if (!checkDomain(element.value)) {
+                element.focus;
+                element.select();
+                setTimeout('busy=0', 1);
+                return false;
+            }
+            busy = 0;
+
+        }
+
+        busy = 0;
+        // alert(checkDomain(element.value));
+
+    }
+
+    //**domain validate
+
+
+
+    function checkDomain(nname) {
+        nname = nname.toLowerCase();
+        var arr = new Array(
+'com', 'net', 'org', 'org.tr', 'in', 'info',
+'edu', 'gov', 'int', 'ac', 'ad', 'ae', 'af', 'ag',
+'ai', 'al', 'am', 'an', 'ao', 'aq', 'ar', 'as', 'at', 'au', 'aw',
+'az', 'ba', 'bb', 'bd', 'be', 'bf', 'bg', 'bh', 'bi', 'bj', 'bm',
+'bn', 'bo', 'br', 'bs', 'bt', 'bv', 'bw', 'by', 'bz', 'ca', 'cc',
+'cd', 'cf', 'cg', 'ch', 'ci', 'ck', 'cl', 'cm', 'cn', 'cr',
+'cu', 'cv', 'cx', 'cy', 'cz', 'de', 'dj', 'dk', 'dm', 'do', 'dz',
+'ec', 'ee', 'eg', 'eh', 'er', 'es', 'et', 'fi', 'fj', 'fk', 'fm',
+'fo', 'fr', 'ga', 'gd', 'ge', 'gf', 'gg', 'gh', 'gi', 'gl', 'gm',
+'gn', 'gp', 'gq', 'gr', 'gs', 'gt', 'gu', 'gv', 'gy', 'hk', 'hm',
+'hn', 'hr', 'ht', 'hu', 'id', 'ie', 'il', 'im', 'in', 'io', 'iq',
+'ir', 'is', 'it', 'je', 'jm', 'jo', 'jp', 'ke', 'kg', 'kh', 'ki',
+'km', 'kn', 'kp', 'kr', 'kw', 'ky', 'kz', 'la', 'lb', 'lc', 'li',
+'lk', 'lr', 'ls', 'lt', 'lu', 'lv', 'ly', 'ma', 'mc', 'md', 'mg',
+'mh', 'mk', 'ml', 'mm', 'mn', 'mo', 'mp', 'mq', 'mr', 'ms', 'mt',
+'mu', 'mv', 'mw', 'mx', 'my', 'mz', 'na', 'nc', 'ne', 'nf', 'ng',
+'ni', 'nl', 'no', 'np', 'nr', 'nu', 'nz', 'om', 'pa', 'pe', 'pf',
+'pg', 'ph', 'pk', 'pl', 'pm', 'pn', 'pr', 'ps', 'pt', 'pw', 'py',
+'qa', 're', 'ro', 'rw', 'ru', 'sa', 'sb', 'sc', 'sd', 'se', 'sg',
+'sh', 'si', 'sj', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'st', 'sv',
+'sy', 'sz', 'tc', 'td', 'tf', 'tg', 'th', 'tj', 'tk', 'tm', 'tn',
+'to', 'tp', 'tr', 'tt', 'tv', 'tw', 'tz', 'ua', 'ug', 'uk', 'um',
+'us', 'uy', 'uz', 'va', 'vc', 've', 'vg', 'vi', 'vn', 'vu', 'ws',
+'wf', 'ye', 'yt', 'yu', 'za', 'zm', 'zw', 'inc.co');
+
+        var mai = nname;
+        var val = true;
+
+        var dot = mai.lastIndexOf(".");
+        var dname = mai.substring(0, dot);
+        //alert(dname);
+        var ext = mai.substring(dot + 1, mai.length);
+        //alert(ext);
+
+        if (dot > 2 && dot < 57) {
+            for (var i = 0; i < arr.length; i++) {
+                if (ext == arr[i]) {
+                    val = true;
+                    break;
+                }
+                else {
+                    val = false;
+                }
+
+            }
+            //alert(val);
+            if (val == false) {
+                alert("Domain extension " + ext + " is not correct");
+                return false;
+            }
+            else {
+                for (var j = 0; j < dname.length; j++) {
+                    var dh = dname.charAt(j);
+                    var hh = dh.charCodeAt(0);
+                    //alert(hh);
+                    //if((hh > 47 && hh<59) || (hh > 64 && hh<91) || (hh > 96 && hh<123) || hh==45 || hh==46)
+                    //{
+                    if ((j == 0 || j == dname.length - 1) && hh == 45) {
+                        alert("Domain name should not begin or end with '-'");
+                        return false;
+                    }
+                    //  }
+                    //else	{
+                    //	 alert("Your domain name should not have special characters");
+                    // return false;
+                    //}
+                }
+            }
+        }
+        else {
+            alert("Domain name is too short/long");
+            return false;
+        }
+
+        return true;
+    }
+
+
+//-->
+</script>
+
+<style type="text/css">
+<!--
+/*red*/
+
+
+
+    .auto-style2 {
+        width: 839px;
+    }
+
+
+
+    .auto-style8 {
+        width: 182px;
+    }
+
+
+
+    .style2
+    {
+        width: 143px;
+    }
+
+
+
+    .style4
+    {
+        width: 221px;
+    }
+
+
+
+    .auto-style9 {
+        width: 262px;
+    }
+
+
+
+    .auto-style10 {
+        width: 68px;
+    }
+
+
+
+    #peradd
+    {
+        width: 275px;
+    }
+
+
+
+    #temadd
+    {
+        margin-left: 0px;
+    }
+
+
+
+    .style9
+    {
+        width: 146px;
+    }
+
+
+
+    .style11
+    {
+        width: 155px;
+    }
+
+
+
+    .style12
+    {
+        width: 153px;
+    }
+
+
+
+    .style13
+    {
+        width: 152px;
+    }
+
+
+
+    #temzip
+    {
+        width: 73px;
+    }
+
+
+
+    #temstd
+    {
+        width: 53px;
+    }
+
+
+
+    #stdpermanent2
+    {
+        width: 51px;
+    }
+    #temphno
+    {
+        width: 114px;
+    }
+
+
+
+    #email1
+    {
+        width: 339px;
+    }
+
+
+
+    .style14
+    {
+        width: 87px;
+    }
+    .style15
+    {
+        width: 98px;
+    }
+
+
+
+    #temstate
+    {
+        width: 115px;
+    }
+
+
+
+-->
+</style>
+<link href="./credila disb_files/credilaformcss.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./credila disb_files/epoch_styles.css">
+ 
+ 
+</head><body bgcolor="#fafbfb" leftmargin="0" topmargin="0" onload="MM_preloadImages(&#39;images/credit_store_ro.gif&#39;,&#39;images/reports_ro.gif&#39;,&#39;images/service_loan_ro.gif&#39;,&#39;images/admin_ro.gif&#39;,&#39;images/process_loan_ro.gif&#39;)" marginheight="0" marginwidth="0">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" background="./credila disb_files/header_bg.gif">
+  <tbody><tr>
+    <td width="169"> <div align="left"><a href="https://credila.net/help/main_appid.asp"><img src="./credila disb_files/logo.gif" width="150" height="50" border="0"></a></div></td>
+    <td> <div align="right">
+
+	
+</div></td>
+  </tr>
+</tbody></table>
+<table cellspacing="0" cellpadding="0" width="100%" background="./credila disb_files/header_bg(1).gif" border="0">
+  <tbody>
+  </tbody></table>
+ <form name="form1" method="post" action="https://credila.net/help/tranch_disb_request.asp?submit=1" onsubmit="JavaScript: return validate();">
+<table cellspacing="0" cellpadding="0" width="478" border="1">
+  <tbody>
+  <tr><td width="150" valign="top" bgcolor="F1F2F2">
+    
+<script language="JavaScript" type="text/JavaScript">
+<!--
+menu_status = new Array(); 
+
+    
+function showHide(theid){
+    if (document.getElementById) {
+    var switch_id = document.getElementById(theid);
+
+        if(menu_status[theid] != 'show') {
+           switch_id.className = 'show';
+           menu_status[theid] = 'show';
+        }else{
+           switch_id.className = 'hide';
+           menu_status[theid] = 'hide';
+        }
+    }
+}
+
+//-->
+</script>
+<style type="text/css">
+.menu1{
+background-image:url(images/menudiv1bg.gif);
+margin-left:25px;
+padding-left:20px;
+padding-top:2px;
+padding-bottom: 2px;
+display:block;
+text-decoration: none;
+
+height: 20px;
+}
+.submenu{
+background-image: url(images/submenu.gif);
+display: block;
+height: 19px;
+margin-left: 38px;
+padding-top: 2px;
+padding-left: 7px;
+
+}
+
+ /* .hide{
+display: none;
+}
+.show{
+display: block;
+}*/
+</style>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<!--student loan appl// start-->
+  <tbody><tr>
+    <td><img src="./credila disb_files/spacer.gif" width="5" height="10"></td>
+  </tr>
+    <tr>
+      <td><img src="./credila disb_files/link_devider.gif" width="169" height="2"></td>
+  </tr>
+ 
+  <tr>
+    <td>
+    <div id="sl_layer" class="hide">
+    <table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="E9EAEA">
+
+ <tbody><tr>
+     <td width="2%">&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td width="99%">
+		  <span class="blacktxt">
+		  <a href="https://credila.net/help/main_appid.asp"><strong>Student 
+            Details</strong></a></span></td>
+        </tr>
+	<tr>
+	
+	</tr>
+        <tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a href="https://credila.net/help/search_show_superamt_appid.asp"><strong>Show Repayment Schedule </strong></a></span></td>
+        </tr>
+		
+		
+		
+		    <tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a href="https://credila.net/help/search_Ecs_paymentReport_appid.asp"><strong>Payment Received Reports </strong></a></span></td>
+        </tr>
+		
+		
+	<tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a href="https://credila.net/help/IntCertificateSearch_pdf.asp"><strong>Interest Certificate </strong></a></span></td>
+        </tr>
+<tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a href="https://credila.net/help/provi_IntCertificateSearch_appid.asp"><strong>Provisional Certificate </strong></a></span></td>
+        </tr>
+
+    
+
+            <tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="bluetxt"><a class="Dark_link" href="https://credila.net/help/tranch_disb_request.asp"><strong>Initiate Disbursement Request
+
+
+</strong></a></span></td>
+        </tr>
+	 <tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a class="Dark_link" href="https://credila.net/help/tranch_disb_request_status_check.asp"><strong>Disbursement Request Status</strong></a></span></td>
+        </tr>
+	
+    
+
+
+	<tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a href="https://credila.net/help/change_pass.asp"><strong>Change Password </strong></a></span></td>
+        </tr>
+
+
+        <tr>
+          <td>&nbsp;&nbsp;<span class="blacktxt">• </span></td>
+          <td><span class="blacktxt"><a href="https://credila.net/help/logout.asp"><strong>Logout </strong></a></span></td>
+        </tr>
+
+
+<tr>
+          <td colspan="2">
+        </td></tr>
+<tr>
+          <td colspan="2">
+        </td></tr>
+
+<tr>
+          <td colspan="2">
+        </td></tr>
+<tr>
+          <td colspan="2">
+        </td></tr>
+<tr>
+ <td colspan="2"> &nbsp;&nbsp;<span class="blacktxt">• </span>If any additional help required; <br>&nbsp;&nbsp;&nbsp;&nbsp;Please send email to &nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:loan@credila.com" class="Dark_link">loan@credila.com </a>
+</td>
+          
+        </tr>
+		
+
+
+      </tbody></table>
+    </div>    </td>
+  </tr>
+  
+ 
+  </tbody></table>
+  
+ 
+</td>
+    <td height="500" align="left" valign="top" bgcolor="#fafbfb" class="auto-style2">
+	 
+      <div align="center">
+        <table cellspacing="1" cellpadding="2" width="100%" border="0" align="center" bgcolor="#B1C9ED">
+        <tbody>
+
+          <tr> 
+            <td height="25" background="./credila disb_files/formhead_bluebg.gif" bgcolor="FAFBFB" class="bluextpagehead"> 
+              <div align="center"><strong>&nbsp;&nbsp;&nbsp;&nbsp; Tranch Disbursement Request Form for USA</strong><b> 
+                </b></div></td>
+          </tr>
+             
+              
+      <!--  <tr bgcolor="#F2F3F3">
+          <TD class=bluextpagehead bgColor=#FFFFFF  colspan="2"
+            height=25 align="center"><STRONG>&nbsp;&nbsp;&nbsp;&nbsp; Tranch Disbursement Request Form for USA</STRONG></TD>
+        </TR>
+       
+        <TR>
+          <TD bgColor=#FFFFFF><IMG height=5 
+            src="Credila's%20Student%20Loan%20Intranet%20System_files/spacer.gif" 
+            width="5"></TD>
+        </TR> --></tbody></table></div>
+		
+      <table width="100%" border="0" align="center" cellpadding="1" cellspacing="2">
+       <tbody><tr bgcolor="#FFFFFF"><td height="25"></td> </tr>
+                <tr bgcolor="#FFFFFF"> 
+                  <td><strong>Appid : </strong>&nbsp;A1007010009 :&nbsp; VARUN KUMAR VRUDDHULA
+                 
+				  <input type="hidden" name="loantranche" value="1"> 
+                  </td>
+                </tr>
+              
+                
+                <!--<tr>
+                  <td bgcolor="#FFFFFF" colspan="4"><table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#1366BB">
+                    <tr >
+                      <td width="275" align="left" valign="top" bgcolor="#FFFFFF" ><strong>Institute Details</strong></td>
+                      <td width="415" align="left" valign="top" bgcolor="#FFFFFF"><strong>University    Affiliated With</strong></td>
+                      <td width="120" align="left" valign="top" bgcolor="#FFFFFF" ><strong>City</strong></td>
+                      <td width="101" align="left" valign="top" bgcolor="#FFFFFF" ><strong>Country</strong></td>
+					 
+                    </tr>-->
+
+
+
+                  
+                    <tr>
+                      <td align="left" valign="top" bgcolor="#FFFFFF">
+
+                           USA : 
+					   : STATE UNIVERSITY OF NEW YORK AT BUFFALO :
+                           &nbsp;
+                    :
+                            BACHELOR OF SCIENCE:AEROSPACE, AERONAUTICAL AND ASTRONAUTICAL ENGINEER
+                    </td>
+                    </tr>
+                    
+              
+				
+				 <tr> 
+            <td><table width="100%" border="0" align="center" cellpadding="2" cellspacing="2">
+				<tbody><tr> 
+					  <td><strong> 
+                          Sanction Amount :</strong> 3,500,000<input name="loansanction" type="hidden" class="Formfieldbx" size="40" value="3500000"> 
+                          
+
+					  </td>
+					
+					</tr>
+					
+					</tbody></table></td></tr>
+					 <tr>
+                      <td><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#1366BB">
+					 
+				
+					
+                 <tbody><tr>
+                    <td valign="top" bgcolor="#FFFFFF" class="style9"><strong>Tranche</strong></td>
+                    <td valign="top" bgcolor="#FFFFFF"><strong>Amount</strong></td>
+                    <td valign="top" bgcolor="#FFFFFF"><strong>Disb. Date</strong></td>
+                </tr>
+					
+				
+               	  	 <tr>
+                            <td valign="top" bgcolor="#FFFFFF" class="style9">
+                                1
+                                
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 2,000,000
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">13/08/2010</td>
+                          
+                          
+                          </tr>
+							 
+               	  	 <tr>
+                            <td valign="top" bgcolor="#FFFFFF" class="style9">
+                                2
+                                
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 500,000
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">13/08/2011</td>
+                          
+                          
+                          </tr>
+							 
+               	  	 <tr>
+                            <td valign="top" bgcolor="#FFFFFF" class="style9">
+                                3
+                                
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 550,000
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">02/01/2012</td>
+                          
+                          
+                          </tr>
+							 
+               	  	 <tr>
+                            <td valign="top" bgcolor="#FFFFFF" class="style9">
+                                4
+                                
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 350,000
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">12/10/2012</td>
+                          
+                          
+                          </tr>
+							 
+               	  	 <tr>
+                            <td valign="top" bgcolor="#FFFFFF" class="style9">
+                                5
+                                
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 60,000
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">29/11/2012</td>
+                          
+                          
+                          </tr>
+							 
+               	  	 <tr>
+                            <td valign="top" bgcolor="#FFFFFF" class="style9">
+                                6
+                                
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">
+                                 39,900
+                                </td>
+                                 <td align="left" valign="top" bgcolor="#FFFFFF">19/02/2013</td>
+                          
+                          
+                          </tr>
+							 
+							 <tr>
+							    
+                            <td align="left" valign="top" bgcolor="#FFFFFF" class="style9"><strong>Total Disbursed 
+                            </strong></td>
+                            <td align="left" valign="top" bgcolor="#FFFFFF"> 3,499,900</td>
+                             <td align="left" valign="top" bgcolor="#FFFFFF"> &nbsp;</td>
+							 </tr>
+							</tbody></table></td></tr>
+				
+					
+				
+	
+ 				
+                <tr bgcolor="#F2F3F3"> 
+                  <td><strong> <span class="bluextnrmlhead">Details of Disbursement Requested  :</span></strong></td>
+                </tr>
+				
+				<tr bgcolor="#FAFBFB"> 
+                  <td>Disbursement Required Date :&nbsp;
+                            <input name="datedisbursed" type="text" value="" class="Formfieldbx" id="datedisbursed" size="14" readonly="">
+                    <a href="javascript:show_calendar(&#39;form1.datedisbursed&#39;);" onmouseover="window.status=&#39;Date Picker&#39;;return true;" onmouseout="window.status=&#39;&#39;;return true;"> 
+                    <img src="./credila disb_files/cal.gif" alt="Click here to select start date" width="16" height="16" border="0" align="absmiddle"></a>	
+                    <input type="hidden" value="66" name="hiddenrate">
+                    </td>
+                </tr>
+				<script>
+
+				    function numtoword(txtLoanReq, txtLoanReqInWords) {
+				        //alert(toWords(document.getElementById(txtLoanReq).value));
+				        lonreq=document.getElementById(txtLoanReq).value
+				        if (lonreq.length != 0) {
+				           // alert(lonreq.length);
+				            document.getElementById(txtLoanReqInWords).value = toWords(document.getElementById(txtLoanReq).value);
+				            document.getElementById("div_words").innerHTML = toWords(document.getElementById(txtLoanReq).value);
+				        }
+				        else {
+				            document.getElementById(txtLoanReqInWords).value = "";
+				            document.getElementById("div_words").innerHTML = "";
+				        }
+				    }
+
+				    function fnamtcheck(elt) {
+				        if (isNaN(elt.value) != true) {
+				            FillamtTotal();
+				        }
+				        else {
+				            alert("Enter value in Numeric only");
+				            elt.value = "";
+				            elt.focus();
+				            return false;
+				        }
+				    }
+
+				    //function to total income details
+
+
+				    function FillamtTotal() {
+
+				        var ddpayee1amt, ddpayee1amt_us, wirepayee2amt, wirepayee2amt_us, forexpayee2amt, forexpayee2amt_us, refinpayee2amt, refinpayee2amt_us;
+				        var totloandisbursed, totloandisbursed_us;
+				        if (document.form1.modepay1[0].checked == true || document.form1.modepay1[1].checked == true || document.form1.modepay1[2].checked == true) {
+				            if (document.form1.ddpayee1amt.value != "") { ddpayee1amt = document.form1.ddpayee1amt.value } else { ddpayee1amt = 0 }
+				       
+
+				            if (document.form1.ddpayee1amt_us.value != "") { ddpayee1amt_us = document.form1.ddpayee1amt_us.value } else { ddpayee1amt_us = 0 }
+				        }
+				        else {
+				            ddpayee1amt = 0;
+				            ddpayee1amt_us = 0;
+				        }
+
+				        if (document.form1.modepay2wire.checked == true) {
+				            if (document.form1.wirepayee2amt.value != "") { wirepayee2amt = document.form1.wirepayee2amt.value } else { wirepayee2amt = 0 }
+
+				            if (document.form1.wirepayee2amt_us.value != "") { wirepayee2amt_us = document.form1.wirepayee2amt_us.value } else { wirepayee2amt_us = 0 }
+				        }
+				        else {
+				            wirepayee2amt = 0;
+				            wirepayee2amt_us = 0;
+				        }
+
+				        if (document.form1.modepay2forex.checked == true) {
+
+				            if (document.form1.forexpayee2amt.value != "") { forexpayee2amt = document.form1.forexpayee2amt.value } else { forexpayee2amt = 0 }
+				            if (document.form1.forexpayee2amt_us.value != "") { forexpayee2amt_us = document.form1.forexpayee2amt_us.value } else { forexpayee2amt_us = 0 }
+				        }
+				        else {
+				            forexpayee2amt = 0;
+				            forexpayee2amt_us = 0;
+				        }
+
+                        if (document.form1.modepay2refin.checked == true) {
+
+				             if (document.form1.refinpayee2amt.value != "") { refinpayee2amt = document.form1.refinpayee2amt.value } else { refinpayee2amt = 0 }
+				                if (document.form1.refinpayee2amt_us.value != "") { refinpayee2amt_us = document.form1.refinpayee2amt_us.value } else { refinpayee2amt_us = 0 }
+				          }
+				      else {
+				          refinpayee2amt = 0;
+				          refinpayee2amt_us = 0;
+				      }   
+
+				        //alert(co1otheremi);
+
+				       // alert(document.getElementById("totloandisbursed_us").value);
+				      document.form1.totloandisbursed.value = parseFloat(ddpayee1amt) + parseFloat(wirepayee2amt) + parseFloat(forexpayee2amt) + parseFloat(refinpayee2amt);
+				        document.getElementById("totloandisbursed_us").value = parseFloat(ddpayee1amt_us) + parseFloat(wirepayee2amt_us) + parseFloat(forexpayee2amt_us) + parseFloat(refinpayee2amt_us);
+				      
+				        var convertrate = document.form1.hiddenrate.value;
+				        var dollarconvert = 0;
+				        var totalalreadydisb = '100';
+				       
+				        if (document.getElementById("totloandisbursed_us").value != 0) {
+				            var totloandisbursed_us = document.getElementById("totloandisbursed_us").value;
+				            if (convertrate != 0) {
+				                dollarconvert = eval(parseFloat(totloandisbursed_us)) * eval(parseFloat(convertrate));
+				            }
+				        }
+				        document.getElementById("totalamtdisbursed").value = eval(parseFloat(document.getElementById("totloandisbursed").value)) + eval(dollarconvert);
+				        
+                        //convert to word
+				        //numtoword('totalamtdisbursed', 'totalamtdisbursed_words');
+				       // alert(totalalreadydisb);
+				       // alert(totalalreadydisb);
+				        if (parseFloat(document.getElementById("totalamtdisbursed").value) > parseFloat(totalalreadydisb)) {
+				            alert("Total amount requested cannot be greater than undisbursed amount");
+				            document.form1.ddpayee1amt.value = "";
+				            document.form1.ddpayee1amt_us.value = "";
+				            document.form1.wirepayee2amt.value = "";
+				            document.form1.wirepayee2amt_us.value = "";
+				            document.form1.forexpayee2amt.value = "";
+				            document.form1.forexpayee2amt_us.value = "";
+				            document.form1.refinpayee2amt.value = "";
+				            document.form1.refinpayee2amt_us.value = "";
+
+				            document.getElementById("totloandisbursed").value = "";
+				            document.getElementById("totloandisbursed_us").value = "";
+				            document.getElementById("totalamtdisbursed").value = "";
+
+				        }
+				        numtoword('totalamtdisbursed', 'totalamtdisbursed_words');
+				    }
+
+				    //   function FillFinalTotal()
+				    //  {
+				    //       var convertamt = 0;
+				    //   if (document.form1.totloandisbursed_us.value != 0) {
+				    // var  convertamt1 = fnconvertcurr(document.form1.totloandisbursed_us, '2');
+				    //alert(convertamt1);
+
+
+				    //  var amt = document.form1.totloandisbursed_us;
+
+				    //  if (amt.value != 0) {
+
+				    //  var currtype = 2;
+				    ///  $.post('getconvertamt.asp', { CurrType: "" + currtype + "", amount: "" + amt.value + "" }, function (data) {
+				    //alert(data);
+				    // convertamt = data;
+
+
+
+				    //  });
+
+				    // }
+				    // }
+				    // alert(convertamt);
+				    //document.form1.totalamtdisbursed.value = eval(parseFloat(document.form1.totloandisbursed.value)) + eval(convertamt);
+
+				    // var totalalreadydisb = "100";
+				    // alert(totalalreadydisb);
+
+				    // }
+				    function fndisablecurr(obj) {
+				       
+				        if (obj.value != "") {
+				            obj.value = "";
+				            // obj.disabled = true;
+				        }
+
+				    }
+
+				    function fnchkboth(obj1,obj2) {
+
+				        if (obj1.value > 0 && obj2.value > 0) {
+
+				            alert("Please enter amount in either Rs. or $.");
+				            obj1.value = "";
+				            obj2.value = "";
+                            obj1.focus();
+				        }
+
+				    }
+				</script>
+				
+				
+				
+				
+				
+                <tr bgcolor="#FAFBFB"> 
+                  <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#1366BB" style="margin-right: 0px">
+                     
+				
+				
+				        <tbody><tr>
+                      
+						<td bgcolor="#FFFFFF" colspan="4"><strong>Please enter amount in Rs. or $ (USD)<br>
+                            <br>A) For Tuition Fees 
+                           </strong></td>
+                            </tr>
+
+
+                             <tr bgcolor="#FAFBFB"> 
+                  <td bgcolor="#FFFFFF" colspan="2"><table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#1366BB" style="margin-right: 0px">
+                     <tbody><tr><td bgcolor="#FFFFFF" class="style11">Tick on Mode of Payment
+                     
+                            
+                            &nbsp;<br>
+&nbsp;<input type="radio" name="modepay1" id="modepay1" value="DEMAND_DRAFT" onmousedown="this.isChecked = this.checked;" onclick="fnenable(this,document.form1.ddpayee1amt,document.form1.ddpayee1amt_us);fnshowpayee(this);FillamtTotal();">Demand Draft 
+                            &nbsp;<br>
+&nbsp;<input type="radio" name="modepay1" id="modepay1" value="WIRE_TRANSFER" onmousedown="this.isChecked = this.checked;" onclick="fnenable(this,document.form1.ddpayee1amt,document.form1.ddpayee1amt_us);fnshowpayee(this);FillamtTotal();">Wire Transfer<br>
+                            
+                            &nbsp;<input type="radio" name="modepay1" id="modepay1" onmousedown="this.isChecked = this.checked;" value="REFINANCE" onclick="fnenable(this,document.form1.ddpayee1amt,document.form1.ddpayee1amt_us);fnshowpayee(this);FillamtTotal();">Refinance&nbsp;<br>
+
+						</td>
+
+                        <td bgcolor="#FFFFFF">
+                        Rs.&nbsp; <input type="text" class="Formfieldbx" value="" name="ddpayee1amt" onblur="fnchkboth(this,document.form1.ddpayee1amt_us);fnamtcheck(this);" size="10" disabled="">&nbsp;
+                               
+                               
+                             USD $&nbsp;<input type="text" class="Formfieldbx" value="" name="ddpayee1amt_us" disabled="" onblur="fnchkboth(this,document.form1.ddpayee1amt);fnamtcheck(this);" size="10">
+                                
+                            </td>
+                          </tr>
+                    </tbody></table></td></tr>
+				     <tr>
+                       	<td class="style2" bgcolor="#FFFFFF" colspan="4"><strong>B) Living Expenses</strong></td>
+                            </tr>
+
+                              <tr bgcolor="#FAFBFB"> 
+                  <td bgcolor="#FFFFFF" colspan="2"><table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#1366BB" style="margin-right: 0px">
+                         <tbody><tr>
+                            <td class="style12" bgcolor="#FFFFFF">
+                            Tick on Mode of Payment<br>
+                             <input type="checkbox" name="modepay2wire" id="modepay2wire" value="WIRE_TRANSFER" onclick="fnenable(this,document.form1.wirepayee2amt,document.form1.wirepayee2amt_us);fnshowpayee2wire(this);FillamtTotal();">Wire Transfer&nbsp;&nbsp;
+                            &nbsp;<br>
+                           
+                                <input type="checkbox" name="modepay2forex" id="modepay2forex" value="FOREX_TRAVEL_CARD" onclick="fnenable(this,document.form1.forexpayee2amt,document.form1.forexpayee2amt_us);fnshowpayee2forex(this);FillamtTotal();">Forex Travel Card &nbsp;<br>
+                       
+
+                                      <input type="checkbox" name="modepay2refin" id="modepay2refin" value="REFINANCE" onclick="fnenable(this,document.form1.refinpayee2amt,document.form1.refinpayee2amt_us);fnshowpayee2refin(this);FillamtTotal();">Refinance &nbsp;<br>
+                          
+
+                            
+						</td>
+                        <td bgcolor="#FFFFFF" valign="top"><br> Rs.&nbsp; <input type="text" class="Formfieldbx" size="10" value="" name="wirepayee2amt" disabled="" onblur="fnchkboth(this,document.form1.wirepayee2amt_us);fnamtcheck(this);">&nbsp;
+                                
+                                USD $&nbsp;<input type="text" value="" class="Formfieldbx" size="10" name="wirepayee2amt_us" disabled="" onblur="fnchkboth(this,document.form1.wirepayee2amt);fnamtcheck(this);">
+                                <br>
+                                     Rs.&nbsp; <input type="text" size="10" class="Formfieldbx" value="" name="forexpayee2amt" disabled="" onblur="fnchkboth(this,document.form1.forexpayee2amt_us);fnamtcheck(this);">&nbsp;
+                                
+                                USD $&nbsp;<input type="text" value="" class="Formfieldbx" size="10" name="forexpayee2amt_us" disabled="" onblur="fnchkboth(this,document.form1.forexpayee2amt);fnamtcheck(this);">
+                                <br>
+                           
+
+                             Rs.&nbsp; <input type="text" value="" class="Formfieldbx" size="10" name="refinpayee2amt" disabled="" onblur="fnchkboth(this,document.form1.refinpayee2amt_us);fnamtcheck(this);">&nbsp;
+                                
+                                USD $&nbsp;<input type="text" value="" class="Formfieldbx" size="10" name="refinpayee2amt_us" disabled="" onblur="fnchkboth(this,document.form1.refinpayee2amt);fnamtcheck(this);">
+                                <br>
+                           
+                           
+                        </td>
+                      </tr>
+                       </tbody></table></td></tr>
+                    <!-- fnconvertcurr(this,'2',document.form1.refinpayee2amt);-->
+                     <tr bgcolor="#FAFBFB"> 
+                  <td bgcolor="#FFFFFF" colspan="2"><div id="totdiv" name="totdiv" style="display: block;"><table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#1366BB" style="margin-right: 0px">
+				      <tbody><tr>
+                        
+                        <td bgcolor="#FFFFFF" class="style13"><strong> Total Amount </strong>:</td>
+                        <td bgcolor="#FFFFFF">Rs. <input name="totloandisbursed" id="totloandisbursed" type="text" class="Formfieldbx" size="10" value="" readonly="">
+                         <!--&nbsp;&nbsp;&nbsp;USD $&nbsp;-->
+                         <input name="totloandisbursed_us" id="totloandisbursed_us" type="text" class="Formfieldbx" size="10" value="" readonly="">
+                   
+               
+                     </td></tr>
+
+                        <tr>
+                        
+                        <td bgcolor="#FFFFFF" class="style13"><strong> Total Amount to be Disbursed </strong>:</td>
+                        <td bgcolor="#FFFFFF">Rs.&nbsp;<input name="totalamtdisbursed" id="totalamtdisbursed" type="text" onclick="FillFinalTotal();" class="Formfieldbx" size="10" value="" readonly="">
+                       &nbsp;&nbsp;&nbsp;
+                       </td> 
+               
+                      </tr>
+                        <tr>
+                        
+                        <td bgcolor="#FFFFFF"><strong> Total Amount in Words 
+                            <br>
+                            in Rupees</strong>:</td>
+                        <td bgcolor="#FFFFFF"><div id="div_words"></div><input name="totalamtdisbursed_words" id="totalamtdisbursed_words" type="hidden" class="Formfieldbx" size="60" value="" readonly="">
+                        &nbsp;&nbsp;&nbsp;
+                       </td> 
+               
+                      </tr>
+                      </tbody></table></div></td></tr>
+                      <!--************************Tuition Fee Payee Details **********************************-->
+                      
+                      <tr>
+                        
+                        <td colspan="2" bgcolor="#FFFFFF"><div id="tuidiv1" name="tuidiv1" style="display: none;">
+                                    <strong> <span class="bluextnrmlhead">Tuition Fees - Demand Draft Details</span></strong><br>
+                             Payee Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" size="40" name="ddpayee1name">&nbsp;
+                               
+                            </div>
+
+                            <div id="tuidiv2" name="tuidiv2" style="display: none;">
+                                    <strong> <span class="bluextnrmlhead">Tuition Fees - Wire Transfer Details</span></strong><br>
+                            <table cellpadding="1" cellspacing="1">
+
+                                 <tbody><tr>
+                                    <td class="auto-style10">Beneficiary Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" size="40" name="tui_wirebenef" class="auto-style9">   </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="auto-style10">Bank Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" size="40" name="tui_wirebankname" class="auto-style9">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10" valign="top">Bank Address  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="2" name="tui_wireaddress" style="width: 260px"></textarea> 
+                                    </td>
+                                    </tr>
+                                      <tr>
+                                    <td class="auto-style10" valign="top">Bank City  </td>
+                                    <td>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" name="tui_wirebankcity">
+                                 </td>
+                                    </tr>
+                                      <tr>
+                                    <td class="auto-style10" valign="top">Bank State  </td>
+                                    <td>
+                                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="tui_wirebankstate" name="tui_wirebankstate">
+                            <option value="">Select</option>
+							
+                      
+                      <option value="ALABAMA">ALABAMA</option>
+                      
+                      
+                      <option value="ALASKA">ALASKA</option>
+                      
+                      
+                      <option value="ARIZONA">ARIZONA</option>
+                      
+                      
+                      <option value="ARKANSAS">ARKANSAS</option>
+                      
+                      
+                      <option value="CALIFORNIA">CALIFORNIA</option>
+                      
+                      
+                      <option value="COLORADO">COLORADO</option>
+                      
+                      
+                      <option value="CONNECTICUT">CONNECTICUT</option>
+                      
+                      
+                      <option value="DELAWARE">DELAWARE</option>
+                      
+                      
+                      <option value="FLORIDA">FLORIDA</option>
+                      
+                      
+                      <option value="GEORGIA">GEORGIA</option>
+                      
+                      
+                      <option value="HAWAII">HAWAII</option>
+                      
+                      
+                      <option value="IDAHO">IDAHO</option>
+                      
+                      
+                      <option value="ILLINOIS">ILLINOIS</option>
+                      
+                      
+                      <option value="INDIANA">INDIANA</option>
+                      
+                      
+                      <option value="IOWA">IOWA</option>
+                      
+                      
+                      <option value="KANSAS">KANSAS</option>
+                      
+                      
+                      <option value="KENTUCKY">KENTUCKY</option>
+                      
+                      
+                      <option value="LOUISIANA">LOUISIANA</option>
+                      
+                      
+                      <option value="MAINE">MAINE</option>
+                      
+                      
+                      <option value="MARYLAND">MARYLAND</option>
+                      
+                      
+                      <option value="MASSACHUSETTS">MASSACHUSETTS</option>
+                      
+                      
+                      <option value="MICHIGAN">MICHIGAN</option>
+                      
+                      
+                      <option value="MINNESOTA">MINNESOTA</option>
+                      
+                      
+                      <option value="MISSISSIPPI">MISSISSIPPI</option>
+                      
+                      
+                      <option value="MISSOURI">MISSOURI</option>
+                      
+                      
+                      <option value="MONTANA">MONTANA</option>
+                      
+                      
+                      <option value="NEBRASKA">NEBRASKA</option>
+                      
+                      
+                      <option value="NEVADA">NEVADA</option>
+                      
+                      
+                      <option value="NEW HAMPSHIRE">NEW HAMPSHIRE</option>
+                      
+                      
+                      <option value="NEW JERSEY">NEW JERSEY</option>
+                      
+                      
+                      <option value="NEW MEXICO">NEW MEXICO</option>
+                      
+                      
+                      <option value="NEW YORK">NEW YORK</option>
+                      
+                      
+                      <option value="NORTH CAROLINA">NORTH CAROLINA</option>
+                      
+                      
+                      <option value="NORTH DAKOTA">NORTH DAKOTA</option>
+                      
+                      
+                      <option value="OHIO">OHIO</option>
+                      
+                      
+                      <option value="OKLAHOMA">OKLAHOMA</option>
+                      
+                      
+                      <option value="OREGON">OREGON</option>
+                      
+                      
+                      <option value="PENNSYLVANIA">PENNSYLVANIA</option>
+                      
+                      
+                      <option value="RHODE ISLAND">RHODE ISLAND</option>
+                      
+                      
+                      <option value="SOUTH CAROLINA">SOUTH CAROLINA</option>
+                      
+                      
+                      <option value="SOUTH DAKOTA">SOUTH DAKOTA</option>
+                      
+                      
+                      <option value="TENNESSEE">TENNESSEE</option>
+                      
+                      
+                      <option value="TEXAS">TEXAS</option>
+                      
+                      
+                      <option value="UTAH">UTAH</option>
+                      
+                      
+                      <option value="VERMONT">VERMONT</option>
+                      
+                      
+                      <option value="VIRGINIA">VIRGINIA</option>
+                      
+                      
+                      <option value="WASHINGTON">WASHINGTON</option>
+                      
+                      
+                      <option value="WEST VIRGINIA">WEST VIRGINIA</option>
+                      
+                      
+                      <option value="WISCONSIN">WISCONSIN</option>
+                      
+                      
+                      <option value="WYOMING">WYOMING</option>
+                      
+                            
+        
+                    </select>
+                                          </td></tr>
+                                      <tr>
+                                    <td class="auto-style10" valign="top">Bank Country  </td>
+                                    <td>
+                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" value="USA" name="tui_wirebankcountry">
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">Acc.Number  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" value="" name="tui_wireaccno" class="style4">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">Routing Number  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" value="" name="tui_wirerouting" class="style4">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">Intr.Swift Code  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" value="" name="tui_wireswift" class="style4">   </td>
+                                </tr>
+                            </tbody></table>
+                               
+                            </div>
+
+                             <div id="tuidiv3" name="tuidiv3" style="display: none;">
+                                    <strong> <span class="bluextnrmlhead">Tuition Fees - Refinance Details</span></strong><br>
+                            <table>
+                                <tbody><tr>
+                                    <td class="auto-style10">Beneficiary Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="NAGASREE S VRUDDHULA" name="tui_refinname" size="20" class="style4">   </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style10" valign="top">Bank Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="INDIAN BANK" name="tui_refinbank" class="style4">   </td>
+                                </tr>
+                                
+                                 <tr>
+                                    <td class="auto-style10">Acc.Number  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="742437195" name="tui_refinaccno" class="style4">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">IFSC Code  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="IDIB000W013" name="tui_refinifsc" class="style4">   </td>
+                                </tr>
+                                
+                            </tbody></table>
+                               
+                            </div>
+
+                        </td></tr>
+                        
+
+                      <!-- ***********************************End of Tuition************************************-->
+
+                       <!--************************Expenses Payee Details **********************************-->
+                      
+                      <tr>
+                        
+                        <td colspan="2" bgcolor="#FFFFFF">
+                            <div id="expdiv1" name="expdiv1" style="display: none;">
+                                    <strong> <span class="bluextnrmlhead">Living Expenses - Wire Transfer Details</span></strong><br>
+                            <table>
+                             <tbody><tr>
+                                    <td class="auto-style10">Beneficiary Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="VARUNKUMAR VRUDDHULA" size="40" name="liv_wirebenef" class="auto-style9">   </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style10">Bank Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" size="40" name="exp_wirebankname" class="auto-style9">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10" valign="top">Bank Address  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea cols="15" rows="2" name="exp_wireaddress"></textarea> 
+                                    </td></tr>
+                                    <tr>
+                                    <td class="auto-style10" valign="top">Bank City  </td>
+                                    <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" name="exp_wirebankcity">
+                                    
+                                     </td></tr>
+                                    <tr>
+                                    <td class="auto-style10" valign="top">Bank State  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <select id="exp_wirebankstate" name="exp_wirebankstate">
+                            <option value="">Select</option>
+							
+                      
+                      <option value="ALABAMA">ALABAMA</option>
+                      
+                      
+                      <option value="ALASKA">ALASKA</option>
+                      
+                      
+                      <option value="ARIZONA">ARIZONA</option>
+                      
+                      
+                      <option value="ARKANSAS">ARKANSAS</option>
+                      
+                      
+                      <option value="CALIFORNIA">CALIFORNIA</option>
+                      
+                      
+                      <option value="COLORADO">COLORADO</option>
+                      
+                      
+                      <option value="CONNECTICUT">CONNECTICUT</option>
+                      
+                      
+                      <option value="DELAWARE">DELAWARE</option>
+                      
+                      
+                      <option value="FLORIDA">FLORIDA</option>
+                      
+                      
+                      <option value="GEORGIA">GEORGIA</option>
+                      
+                      
+                      <option value="HAWAII">HAWAII</option>
+                      
+                      
+                      <option value="IDAHO">IDAHO</option>
+                      
+                      
+                      <option value="ILLINOIS">ILLINOIS</option>
+                      
+                      
+                      <option value="INDIANA">INDIANA</option>
+                      
+                      
+                      <option value="IOWA">IOWA</option>
+                      
+                      
+                      <option value="KANSAS">KANSAS</option>
+                      
+                      
+                      <option value="KENTUCKY">KENTUCKY</option>
+                      
+                      
+                      <option value="LOUISIANA">LOUISIANA</option>
+                      
+                      
+                      <option value="MAINE">MAINE</option>
+                      
+                      
+                      <option value="MARYLAND">MARYLAND</option>
+                      
+                      
+                      <option value="MASSACHUSETTS">MASSACHUSETTS</option>
+                      
+                      
+                      <option value="MICHIGAN">MICHIGAN</option>
+                      
+                      
+                      <option value="MINNESOTA">MINNESOTA</option>
+                      
+                      
+                      <option value="MISSISSIPPI">MISSISSIPPI</option>
+                      
+                      
+                      <option value="MISSOURI">MISSOURI</option>
+                      
+                      
+                      <option value="MONTANA">MONTANA</option>
+                      
+                      
+                      <option value="NEBRASKA">NEBRASKA</option>
+                      
+                      
+                      <option value="NEVADA">NEVADA</option>
+                      
+                      
+                      <option value="NEW HAMPSHIRE">NEW HAMPSHIRE</option>
+                      
+                      
+                      <option value="NEW JERSEY">NEW JERSEY</option>
+                      
+                      
+                      <option value="NEW MEXICO">NEW MEXICO</option>
+                      
+                      
+                      <option value="NEW YORK">NEW YORK</option>
+                      
+                      
+                      <option value="NORTH CAROLINA">NORTH CAROLINA</option>
+                      
+                      
+                      <option value="NORTH DAKOTA">NORTH DAKOTA</option>
+                      
+                      
+                      <option value="OHIO">OHIO</option>
+                      
+                      
+                      <option value="OKLAHOMA">OKLAHOMA</option>
+                      
+                      
+                      <option value="OREGON">OREGON</option>
+                      
+                      
+                      <option value="PENNSYLVANIA">PENNSYLVANIA</option>
+                      
+                      
+                      <option value="RHODE ISLAND">RHODE ISLAND</option>
+                      
+                      
+                      <option value="SOUTH CAROLINA">SOUTH CAROLINA</option>
+                      
+                      
+                      <option value="SOUTH DAKOTA">SOUTH DAKOTA</option>
+                      
+                      
+                      <option value="TENNESSEE">TENNESSEE</option>
+                      
+                      
+                      <option value="TEXAS">TEXAS</option>
+                      
+                      
+                      <option value="UTAH">UTAH</option>
+                      
+                      
+                      <option value="VERMONT">VERMONT</option>
+                      
+                      
+                      <option value="VIRGINIA">VIRGINIA</option>
+                      
+                      
+                      <option value="WASHINGTON">WASHINGTON</option>
+                      
+                      
+                      <option value="WEST VIRGINIA">WEST VIRGINIA</option>
+                      
+                      
+                      <option value="WISCONSIN">WISCONSIN</option>
+                      
+                      
+                      <option value="WYOMING">WYOMING</option>
+                      
+                            
+        
+        </select>
+        
+                                        
+                                         </td></tr>
+                                    <tr>
+                                    <td class="auto-style10" valign="top">Bank Zip  </td>
+                                    <td> 
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" name="exp_wirebankzip">
+                                      </td></tr>
+                                    <tr>
+                                    <td class="auto-style10" valign="top">Bank Country  </td>
+                                    <td> 
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="USA" name="exp_wirebankcountry">
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">Acc.Number  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" name="exp_wireaccno" class="style4">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">Routing Number  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" name="exp_wirerouting" class="style4">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">Intr.Swift Code  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="" name="exp_wireswift" class="style4">   </td>
+                                </tr>
+                            </tbody></table>
+                               
+                            </div>
+
+                             <div id="expdiv2" name="expdiv2" style="display: none;">
+                                    <strong> <span class="bluextnrmlhead">Living Expenses - Forex Travel Card Details</span></strong><br>
+                            <table>
+                                <tbody><tr>
+                                    <td class="auto-style10">Name on Card  </td>
+                                    <td><input type="text" value="" name="exp_cardname" class="style4">   </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style10">Card No. </td>
+                                    <td><input type="text" value="" name="exp_cardno" class="style4">   </td>
+                                </tr>
+                                
+                               
+                                
+                            </tbody></table>
+                               
+                            </div>
+
+                               <div id="expdiv3" name="expdiv3" style="display: none;">
+                                    <strong> <span class="bluextnrmlhead">Living Expenses - Refinance Details</span></strong><br>
+                            <table>
+                                <tbody><tr>
+                                    <td class="auto-style10">Beneficiary Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="NAGASREE S VRUDDHULA" name="exp_refinname" class="style4">   </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style10">Bank Name  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="INDIAN BANK" name="exp_refinbank" class="style4">   </td>
+                                </tr>
+                                
+                                 <tr>
+                                    <td class="auto-style10">Acc.Number  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="742437195" name="exp_refinaccno" class="style4">   </td>
+                                </tr>
+                                 <tr>
+                                    <td class="auto-style10">IFSC Code  </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" value="IDIB000W013" name="exp_refinifsc" class="style4">   </td>
+                                </tr>
+                                
+                            </tbody></table>
+                               
+                            </div>
+                        </td></tr>
+                      <!--************************************End Of Expenses***********************************-->
+                    </tbody></table></td>
+                </tr>
+				
+                     
+                    
+				
+				<!-- end of tabular data
+				
+				
+                
+				<tr bgcolor="#F2F3F3"> 
+                  <td colspan="4" ><strong> <span class="bluextnrmlhead">For Effecting Wire Transfer Provide Bank Details</span></strong></td>
+                </tr>
+                <tr bgcolor="#FAFBFB"> 
+                  <td colspan="4" ><table width="100%" border="1" cellspacing="2" cellpadding="0">
+                      <tr>
+                         <td ><strong> Name of Beneficiary</strong></td>
+                        
+						 <td ><strong>Address of Beneficiary</strong></td>
+                        <td  ><strong>Bank Details</strong></td>
+					     
+                     <td  ><strong>Bank Acc. Number</strong></td>   
+                        
+                      </tr>
+                    
+				
+				
+				        <tr>
+                       
+                       
+						<td class="style13" ><input type="text" name="beneficiary" value="" class="auto-style5"/></td>
+                        <td class="style13" > <textarea rows="3" cols="15" name="benfaddress"></textarea></td>
+                        
+                       
+                            <td class="style13" >Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="benfbank"  value=""  /><br>
+                            Addr:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <textarea rows="3" cols="15" name="benfbankaddress"></textarea><br>
+                           
+                                <br>
+                            IFSC Code:<input type="text" name="benfbankifsc"  value=""  />
+                            </td>
+                             <td class="style13" > <input type="text" name="benfbankacc"  value=""  /></td>
+                 </tr>
+                    
+			
+					
+                    </table></td>
+                </tr>
+				
+				
+				
+			 -->
+					
+              
+		  <tr>
+		   
+           
+			<td colspan="8" bgcolor="#FAFBFB"> <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" style="display:block "> 
+			<tbody><tr>
+			<td>            
+                Comment :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<textarea name="comment" rows="3" style="width: 258px"></textarea>
+              </td>
+          </tr>
+          <tr>
+          <td colspan="2">
+        
+          
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+   
+    <td valign="top" bgcolor="FAFBFB">
+      
+		  
+        
+        <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#FAFBFB">
+           
+		   
+		<tbody><tr bgcolor="#FFFFFF">
+            <td colspan="2">
+           
+                                <table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#FAFBFB">
+           
+           
+            <tbody><tr>
+                <td height="24" bgcolor="#FAFBFB" class="Table_Border_black" colspan="2">
+                    <strong><span class="grytxthig">Update Student Contact Details </span></strong>
+                    </td>
+            </tr>
+          
+          <tr>
+         <td align="left" class="style14">Current Resi.Address:</td>
+         <td colspan="2"> <textarea rows="3" cols="30" id="temadd" name="temadd" onblur="return val(this);" onkeypress="return imposeMaxLength(this, 300);"></textarea></td>
+            <!--<td>LandMark:</td>
+              </tr> 
+      <td  align="left"  ><input id="temlandmark" value="" name="temlandmark" type="text" maxlength="50"/></td>-->
+      
+        
+              </tr>                     
+         
+         
+        
+             <tr>
+         <td class="style14">Country:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td class="style15">USA <input type="hidden" value="USA" name="temcountry">
+       </td>
+        <td>State&nbsp;:&nbsp;&nbsp;<select id="temstate" name="temstate">
+        <option value="">Select</option>
+							
+                      
+                      <option value="ALABAMA">ALABAMA</option>
+                      
+                      
+                      <option value="ALASKA">ALASKA</option>
+                      
+                      
+                      <option value="ARIZONA">ARIZONA</option>
+                      
+                      
+                      <option value="ARKANSAS">ARKANSAS</option>
+                      
+                      
+                      <option value="CALIFORNIA">CALIFORNIA</option>
+                      
+                      
+                      <option value="COLORADO">COLORADO</option>
+                      
+                      
+                      <option value="CONNECTICUT">CONNECTICUT</option>
+                      
+                      
+                      <option value="DELAWARE">DELAWARE</option>
+                      
+                      
+                      <option value="FLORIDA">FLORIDA</option>
+                      
+                      
+                      <option value="GEORGIA">GEORGIA</option>
+                      
+                      
+                      <option value="HAWAII">HAWAII</option>
+                      
+                      
+                      <option value="IDAHO">IDAHO</option>
+                      
+                      
+                      <option value="ILLINOIS">ILLINOIS</option>
+                      
+                      
+                      <option value="INDIANA">INDIANA</option>
+                      
+                      
+                      <option value="IOWA">IOWA</option>
+                      
+                      
+                      <option value="KANSAS">KANSAS</option>
+                      
+                      
+                      <option value="KENTUCKY">KENTUCKY</option>
+                      
+                      
+                      <option value="LOUISIANA">LOUISIANA</option>
+                      
+                      
+                      <option value="MAINE">MAINE</option>
+                      
+                      
+                      <option value="MARYLAND">MARYLAND</option>
+                      
+                      
+                      <option value="MASSACHUSETTS">MASSACHUSETTS</option>
+                      
+                      
+                      <option value="MICHIGAN">MICHIGAN</option>
+                      
+                      
+                      <option value="MINNESOTA">MINNESOTA</option>
+                      
+                      
+                      <option value="MISSISSIPPI">MISSISSIPPI</option>
+                      
+                      
+                      <option value="MISSOURI">MISSOURI</option>
+                      
+                      
+                      <option value="MONTANA">MONTANA</option>
+                      
+                      
+                      <option value="NEBRASKA">NEBRASKA</option>
+                      
+                      
+                      <option value="NEVADA">NEVADA</option>
+                      
+                      
+                      <option value="NEW HAMPSHIRE">NEW HAMPSHIRE</option>
+                      
+                      
+                      <option value="NEW JERSEY">NEW JERSEY</option>
+                      
+                      
+                      <option value="NEW MEXICO">NEW MEXICO</option>
+                      
+                      
+                      <option value="NEW YORK">NEW YORK</option>
+                      
+                      
+                      <option value="NORTH CAROLINA">NORTH CAROLINA</option>
+                      
+                      
+                      <option value="NORTH DAKOTA">NORTH DAKOTA</option>
+                      
+                      
+                      <option value="OHIO">OHIO</option>
+                      
+                      
+                      <option value="OKLAHOMA">OKLAHOMA</option>
+                      
+                      
+                      <option value="OREGON">OREGON</option>
+                      
+                      
+                      <option value="PENNSYLVANIA">PENNSYLVANIA</option>
+                      
+                      
+                      <option value="RHODE ISLAND">RHODE ISLAND</option>
+                      
+                      
+                      <option value="SOUTH CAROLINA">SOUTH CAROLINA</option>
+                      
+                      
+                      <option value="SOUTH DAKOTA">SOUTH DAKOTA</option>
+                      
+                      
+                      <option value="TENNESSEE">TENNESSEE</option>
+                      
+                      
+                      <option value="TEXAS">TEXAS</option>
+                      
+                      
+                      <option value="UTAH">UTAH</option>
+                      
+                      
+                      <option value="VERMONT">VERMONT</option>
+                      
+                      
+                      <option value="VIRGINIA">VIRGINIA</option>
+                      
+                      
+                      <option value="WASHINGTON">WASHINGTON</option>
+                      
+                      
+                      <option value="WEST VIRGINIA">WEST VIRGINIA</option>
+                      
+                      
+                      <option value="WISCONSIN">WISCONSIN</option>
+                      
+                      
+                      <option value="WYOMING">WYOMING</option>
+                      
+                            
+        
+        </select>
+        
+         </td>
+         </tr>
+              <tr>
+
+         <td class="style14">City:</td>
+ <td colspan="2"><input type="text" value="" name="temcity" style="width: 127px"> &nbsp;
+     Zip Code:<input id="temzip" name="temzip" type="text" size="4" value="" onkeypress="AllowNumeric();" onblur="chk_pin(this);" maxlength="6">
+         </td>
+        
+           
+         </tr>
+         
+         
+          
+        <!--<tr> 
+                  <td height="24"  bgcolor="#F2F3F3" colspan="4" ><strong><span class="bluextnrmlhead">
+                      Permanent/ Resi. Address 
+                        <input type="checkbox" name="sameaddress" value="checkbox" OnClick="javascript : return changeaddress()">
+                      Same as above</span></strong></td>
+                </tr>
+               
+                <tr>
+         <td  align="left">Perm. Address:</td>
+         <td  colspan="2"> 
+           <textarea rows="3" id="peradd" name="peradd" onblur="return val(this);" 
+                 onkeypress="return imposeMaxLength(this, 300);"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+           </td>
+                    <!--<td>LandMark: <input id="perlandmark" name="perlandmark" value="" type="text" maxlength="50"/>      
+        </td>
+        </tr>
+                
+        
+        
+          <tr>
+         <td class="style7"  >Country:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         <td  > <select id="percountry" name="percountry"    >
+        <option value="">Select</option>
+							
+                      
+                      <option value="ABROAD"  >ABROAD</option>
+                      
+                      
+                      <option value="AFGHANISTAN"  >AFGHANISTAN</option>
+                      
+                      
+                      <option value="ALGERIA"  >ALGERIA</option>
+                      
+                      
+                      <option value="ARGENTINA"  >ARGENTINA</option>
+                      
+                      
+                      <option value="ARMENIA"  >ARMENIA</option>
+                      
+                      
+                      <option value="AUSTRALIA"  >AUSTRALIA</option>
+                      
+                      
+                      <option value="AUSTRIA"  >AUSTRIA</option>
+                      
+                      
+                      <option value="AZERBAIJAN"  >AZERBAIJAN</option>
+                      
+                      
+                      <option value="BAHRAIN"  >BAHRAIN</option>
+                      
+                      
+                      <option value="BANGLADESH"  >BANGLADESH</option>
+                      
+                      
+                      <option value="BARBADAUS"  >BARBADAUS</option>
+                      
+                      
+                      <option value="BELARUS"  >BELARUS</option>
+                      
+                      
+                      <option value="BELGIUM"  >BELGIUM</option>
+                      
+                      
+                      <option value="BELIZE"  >BELIZE</option>
+                      
+                      
+                      <option value="BHUTAN"  >BHUTAN</option>
+                      
+                      
+                      <option value="BRAZIL"  >BRAZIL</option>
+                      
+                      
+                      <option value="BRUNEI"  >BRUNEI</option>
+                      
+                      
+                      <option value="BULGARIA"  >BULGARIA</option>
+                      
+                      
+                      <option value="CANADA"  >CANADA</option>
+                      
+                      
+                      <option value="CHINA"  >CHINA</option>
+                      
+                      
+                      <option value="CROATIA"  >CROATIA</option>
+                      
+                      
+                      <option value="CURACAO"  >CURACAO</option>
+                      
+                      
+                      <option value="CYPRUS"  >CYPRUS</option>
+                      
+                      
+                      <option value="CZECH"  >CZECH</option>
+                      
+                      
+                      <option value="DENMARK"  >DENMARK</option>
+                      
+                      
+                      <option value="EGYPT"  >EGYPT</option>
+                      
+                      
+                      <option value="ESTONIA"  >ESTONIA</option>
+                      
+                      
+                      <option value="ETHIOPIA"  >ETHIOPIA</option>
+                      
+                      
+                      <option value="FIJI"  >FIJI</option>
+                      
+                      
+                      <option value="FINLAND"  >FINLAND</option>
+                      
+                      
+                      <option value="FRANCE"  >FRANCE</option>
+                      
+                      
+                      <option value="GEORGIA"  >GEORGIA</option>
+                      
+                      
+                      <option value="GERMANY"  >GERMANY</option>
+                      
+                      
+                      <option value="GREECE"  >GREECE</option>
+                      
+                      
+                      <option value="GUYANA"  >GUYANA</option>
+                      
+                      
+                      <option value="HONG KONG"  >HONG KONG</option>
+                      
+                      
+                      <option value="HUNGARY"  >HUNGARY</option>
+                      
+                      
+                      <option value="INDIA"  >INDIA</option>
+                      
+                      
+                      <option value="INDONESIA"  >INDONESIA</option>
+                      
+                      
+                      <option value="IRELAND"  >IRELAND</option>
+                      
+                      
+                      <option value="ISRAEL"  >ISRAEL</option>
+                      
+                      
+                      <option value="ITALY"  >ITALY</option>
+                      
+                      
+                      <option value="JAPAN"  >JAPAN</option>
+                      
+                      
+                      <option value="KAZAKHSTAN"  >KAZAKHSTAN</option>
+                      
+                      
+                      <option value="KENYA"  >KENYA</option>
+                      
+                      
+                      <option value="KINGDOM OF BAHRAIN"  >KINGDOM OF BAHRAIN</option>
+                      
+                      
+                      <option value="KUWAIT"  >KUWAIT</option>
+                      
+                      
+                      <option value="KYRGYZSTAN"  >KYRGYZSTAN</option>
+                      
+                      
+                      <option value="LATVIA"  >LATVIA</option>
+                      
+                      
+                      <option value="LITHUANIA"  >LITHUANIA</option>
+                      
+                      
+                      <option value="LUXEMBOURG"  >LUXEMBOURG</option>
+                      
+                      
+                      <option value="MADAGASCAR"  >MADAGASCAR</option>
+                      
+                      
+                      <option value="MALAYSIA"  >MALAYSIA</option>
+                      
+                      
+                      <option value="MALDIVES"  >MALDIVES</option>
+                      
+                      
+                      <option value="MALTA"  >MALTA</option>
+                      
+                      
+                      <option value="MAURITIUS"  >MAURITIUS</option>
+                      
+                      
+                      <option value="MAXICO"  >MAXICO</option>
+                      
+                      
+                      <option value="MONACO"  >MONACO</option>
+                      
+                      
+                      <option value="MOZAMBIQUE"  >MOZAMBIQUE</option>
+                      
+                      
+                      <option value="MYANMAR"  >MYANMAR</option>
+                      
+                      
+                      <option value="NEPAL"  >NEPAL</option>
+                      
+                      
+                      <option value="NETHERLANDS"  >NETHERLANDS</option>
+                      
+                      
+                      <option value="NEW ZEALAND"  >NEW ZEALAND</option>
+                      
+                      
+                      <option value="NIGERIA"  >NIGERIA</option>
+                      
+                      
+                      <option value="NORWAY"  >NORWAY</option>
+                      
+                      
+                      <option value="OMAN"  >OMAN</option>
+                      
+                      
+                      <option value="PHILIPPINES"  >PHILIPPINES</option>
+                      
+                      
+                      <option value="POLAND"  >POLAND</option>
+                      
+                      
+                      <option value="PORTUGAL"  >PORTUGAL</option>
+                      
+                      
+                      <option value="QATAR"  >QATAR</option>
+                      
+                      
+                      <option value="ROMANIA"  >ROMANIA</option>
+                      
+                      
+                      <option value="RUSSIA"  >RUSSIA</option>
+                      
+                      
+                      <option value="SAINT LUCIA"  >SAINT LUCIA</option>
+                      
+                      
+                      <option value="SAUDI ARABIA"  >SAUDI ARABIA</option>
+                      
+                      
+                      <option value="SINGAPORE"  >SINGAPORE</option>
+                      
+                      
+                      <option value="SLOVAKIA"  >SLOVAKIA</option>
+                      
+                      
+                      <option value="SLOVENIA"  >SLOVENIA</option>
+                      
+                      
+                      <option value="SOUTH AFRICA"  >SOUTH AFRICA</option>
+                      
+                      
+                      <option value="SOUTH KOREA"  >SOUTH KOREA</option>
+                      
+                      
+                      <option value="SPAIN"  >SPAIN</option>
+                      
+                      
+                      <option value="SRI LANKA"  >SRI LANKA</option>
+                      
+                      
+                      <option value="SUDAN"  >SUDAN</option>
+                      
+                      
+                      <option value="SWEDEN"  >SWEDEN</option>
+                      
+                      
+                      <option value="SWITZERLAND"  >SWITZERLAND</option>
+                      
+                      
+                      <option value="TAIWAN"  >TAIWAN</option>
+                      
+                      
+                      <option value="TAJIKISTAN"  >TAJIKISTAN</option>
+                      
+                      
+                      <option value="TANZANIA"  >TANZANIA</option>
+                      
+                      
+                      <option value="THAILAND"  >THAILAND</option>
+                      
+                      
+                      <option value="TURKEY"  >TURKEY</option>
+                      
+                      
+                      <option value="UAE"  >UAE</option>
+                      
+                      
+                      <option value="UGANDA"  >UGANDA</option>
+                      
+                      
+                      <option value="UK"  >UK</option>
+                      
+                      
+                      <option value="UKRAINE"  >UKRAINE</option>
+                      
+                      
+                      <option value="USA"  >USA</option>
+                      
+                      
+                      <option value="ZAMBIA"  >ZAMBIA</option>
+                      
+                            
+        
+        </select> </td> &nbsp;&nbsp;&nbsp;<td colspan="2"> State: <input type="text" value="" name = "perstate" />
+   
+     
+        
+         </td>
+         </tr>
+         <tr>
+         <td class="style7"  >City:&nbsp;
+         </td>
+         <td colspan="2"  >
+        <input type="text" value="" name = "percity" />
+        &nbsp;Zip Code:<input id="perzip" name="perzip" type="text" value="" onkeypress="AllowNumeric();"  maxlength="6"/>
+         </td>
+        
+           
+         </tr>
+        
+         <tr>
+         <td height="43"  align="left" class="auto-style6" colspan="3"> LandLine No.(Current):&nbsp; &nbsp;
+         <input id="stdpresent" name="stdpresent" value="" size="8" type="text"  onkeypress="AllowNumeric();"  maxlength="6" />-<input id="phpresent" name="phpresent" value="" size="15" type="text"  onkeypress="AllowNumeric();"  maxlength="8"/> <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            (STD)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(NUMBER)</td>
+             </tr>-->
+             
+        <tr>
+        <td align="left" class="style14">USA Phone No. :
+        </td>
+            <td colspan="2"><input id="temstd" name="stdpermanent" value="" type="text" onkeypress="AllowNumeric();" maxlength="3">&nbsp; <input id="stdpermanent2" name="stdpermanent2" value="" type="text" onkeypress="AllowNumeric();" maxlength="3"> -&nbsp;&nbsp;
+
+             <input id="temphno" name="temphno" value="" type="text" onkeypress="AllowNumeric();" onblur="chk_phone(this);" maxlength="4">
+           <!-- <input id="mobile" value="" name="mobile" type="text" onkeypress="AllowNumeric();"  onblur="indianMobilevalidate(this,'percountry','Mobile Number should be 10 or 11 digits for country india');"   maxlength="11"/>&nbsp;&nbsp;&nbsp;-->
+            </td>
+    
+      </tr><tr>
+        
+       
+         <td align="left" class="style14">Email Id :
+         </td>
+            <td colspan="2">
+           <input id="email1" name="email" value="" type="text" size="50" onblur="validateEmail(this);"></td>
+    
+      </tr>
+           
+           <!--PDD pending doc from rpevious tranche -->
+            							
+								<!-- end of pdd pending  -->
+            <tr>
+        
+            <td colspan="3">
+           <input name="agree" type="checkbox" value="Y"><strong>I/We agree to all the terms and conditions as per already singed Education Loan Agreement</strong></td>
+    
+      </tr>
+            
+                                </tbody></table>
+
+
+
+                            </td>
+   </tr>
+                      
+                   
+		
+                   
+    </tbody></table>
+     
+</td>
+  </tr>
+</tbody></table>
+
+         
+          </td>
+          </tr>
+		  </tbody></table></td></tr>
+          <script language="javascript">
+
+              //function to get dollar conversion rate
+              //function fnconvertcurr() {
+              var convertamt;
+              var amt = 1;
+              var currtype = 2;
+              if (amt != 0) {
+                  $.post('getconvertamt.asp', { CurrType: "" + currtype + "", amount: "" + amt + "" }, function (data) {
+                      // alert(data);
+                      convertamt = data;
+                      // alert(convertamt);
+
+                      document.form1.hiddenrate.value = convertamt;
+                  });
+
+              }
+              //alert(convertamt);
+
+              // }
+          </script>
+          
+          
+          <tr>
+            <td height="25" bgcolor="#FAFBFB" colspan="2">              <div align="center"> 
+                <input name="btnsubmit" type="button" class="Formfieldbx" value="Next&gt;&gt;" onclick="validate();">				
+             
+			  <input type="hidden" name="appid" value="A1007010009"></div></td>
+          </tr>
+        </tbody></table><br></td></tr></tbody></table>
+</form>
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tbody>
+  <tr background="./credila disb_files/footer_bg.gif">
+    <td height="41">
+      <div class="bluextnrml" align="center">© Copyright, Credila Financial Services, All Rights Reserved. CIN: U67190MH2006PTC159411</div></td></tr></tbody>
+</table>
+<link rel="stylesheet" type="text/css" href="./credila disb_files/epoch_styles.css">
+<script type="text/javascript" src="./credila disb_files/epoch_classes.js.download"></script>
+<script type="text/javascript">
+/*You can also place this code in a separate file and link to it like epoch_classes.js*/
+	var bas_cal,dp_cal,ms_cal;      
+window.onload = function () {
+	dp_cal  = new Epoch('epoch_popup','popup');
+}
+
+function ShowCalendar(dateCtrlId, buttonCtrl)
+{
+    
+    var leftoffset = buttonCtrl.offsetLeft;
+    var ctrl = document.getElementById(dateCtrlId);
+    dp_cal.updateControl(ctrl, leftoffset);
+    buttonCtrl.onblur = function () {if(!dp_cal.mousein){dp_cal.hide();}}; 
+    //dp_cal.updatePos(ctrl);
+    dp_cal.show();
+}
+</script>
+
+
+</body></html>

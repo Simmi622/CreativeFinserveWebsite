@@ -1,0 +1,44 @@
+#mask {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:99998;
+	background-color: #4D4D4D;
+	display:none;
+}  
+		#boxes .window {
+		  position:absolute;
+		  left:0;
+		  top:0;
+		  width:670px;
+		  height:540px;
+		  display:none;
+		  z-index:99999;
+		  padding:10px;
+		  -moz-border-radius: 10px;
+		  -webkit-border-radius: 10px;
+		  border-radius: 10px;
+		  border: 2px solid #333333;
+		  
+		  -moz-box-shadow:4px 4px 30px #130507;
+			-webkit-box-shadow:4px 4px 30px #130507;
+		  box-shadow:4px 4px 30px #130507;
+			-moz-transition:top 800ms;
+			-o-transition:top 800ms;
+			-webkit-transition:top 800ms;
+		  transition:top 800ms;
+		}
+		#boxes #dialog {
+		  width:660px;
+		  height:540px;
+		  padding:0px;
+		  background-color: #FFFFFF;
+		}
+.popup-img {
+	background-image:url(../images/popup.jpg);
+	background-position:center top;
+	background-repeat:no-repeat;
+			  width:660px;
+		  height:540px;
+
+}

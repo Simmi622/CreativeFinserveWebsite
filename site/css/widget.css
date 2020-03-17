@@ -1,0 +1,192 @@
+/*-----------------------------------------------------------------------------------*/
+/*  EMI Calculator Wide Widget style sheet
+/*-----------------------------------------------------------------------------------*/
+.ecww-cleardiv {
+    height: 0 !important;
+    clear: both !important; 
+    margin: 0 !important; 
+    padding: 0 !important; 
+    overflow: hidden !important; 
+}
+#ecww-widgetwrapper {
+	width: 50% !important;
+	height: 250px !important;
+}
+#ecww-widget {
+    font: normal 13px/1.5 Helvetica, Arial, Verdana, Sans-serif !important;
+    color: #444444 !important;
+    border: 1px solid #DBDAD7 !important;
+    border-bottom: 0 none !important;
+    width: 50% !important;
+    float: left !important;
+}
+#ecww-header {
+    background: #444444 url('../img/emicalculator.png') 50% 50% no-repeat !important;
+    margin: -1px 0 0 -1px !important;
+    height: 38px !important;
+    text-indent: -9999px !important;
+    width: 302px !important;
+    padding: 0 !important;
+    border: 0 none !important;
+}
+#ecww-formwrapper {
+    background: none repeat scroll 0 0 #EEEEEE !important;
+    width: 300px !important;
+    height: 215px !important;
+    float: left !important;
+    border-right: 1px solid #DBDAD7 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+#ecww-form {
+    padding: 20px 0 0 7px !important;  
+}
+#ecww-mamount label, #ecww-mint label, #ecww-mterm label {
+    display: inline-block !important;
+    margin: 0 !important;
+    text-align: right !important;
+    width: 130px !important;
+    float: left !important;
+    height: 32px !important;
+    line-height: 32px !important;
+}
+#ecww-mint span, #ecww-mamount span {
+    background: none repeat scroll 0 0 #EDEDED !important;
+    border-bottom: 1px solid #DBDAD7 !important;
+    border-left: 0 none !important;
+    border-right: 1px solid #DBDAD7 !important;
+    border-top: 1px solid #DBDAD7 !important;
+    display: inline-block !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    vertical-align: top !important;
+    width: 35px !important;
+}
+#ecww-mamount, #ecww-mint, #ecww-mterm {
+    margin-bottom: 10px !important;
+}
+#ecww-form div.ecww-sep {
+    padding-top: 10px !important;
+}
+#ecww-form input[type="text"] {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    border: 1px solid #DBDAD7 !important;
+    box-shadow: 1px 1px 4px #F4F4F4 inset !important;
+    font: normal 13px/1.5 Helvetica, Arial, Verdana, Sans-serif !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    padding: 0 10px !important;
+    -webkit-appearance: none !important;
+    -webkit-border-radius:0 !important;
+    border-radius: 0 !important;
+}
+#ecww-form input:focus {
+    border-color: rgba(82, 168, 236, 0.8) !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6) !important;
+    outline: 0 none !important;
+}
+#ecww-loanamount {
+    margin: 0 0 0 10px !important;
+    width: 80px !important;
+}
+#ecww-loaninterest, #ecww-loanterm {
+    margin: 0 0 0 10px !important;
+    width: 45px !important;
+}
+#ecww-mterm {
+    float: left !important;
+    width: 207px !important;
+}
+#ecww-tenurechoice {
+    float: left !important;
+    height: 36px !important;
+    margin: 5px 0 0 5px !important;
+    padding-top: 5px !important;
+    width: 75px !important;
+}
+#ecww-loanyearslabel, #ecww-loanmonthslabel {
+    margin: 0 !important;
+    padding: 0 5px !important;
+}
+#ecww-lyrs, #ecww-lmths {
+    height: 16px !important;
+    margin: 0 !important;
+}
+#ecww-lyrs input, #ecww-lmths input {
+    vertical-align: middle !important;
+}
+#ecww-lyrs label, #ecww-lmths label {
+    display: inline !important;
+    vertical-align: middle !important;
+}
+#ecww-summary {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    border-right: 1px solid #DBDAD7 !important;
+    float: left !important;
+    height: 215px !important;
+    margin: 0 !important;
+    width: 236px !important;
+    overflow: hidden !important;
+}
+#ecww-monthlypayment, #ecww-totalinterest, #ecww-totalamount {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    text-align: center !important;
+    border-bottom: 1px dotted #DBDAD7 !important;
+}
+#ecww-totalamount {
+    border-bottom: 0 none !important;
+}
+#ecww-summary h4 {
+    color: #888888 !important;
+    font: normal 13px/1.5 Helvetica, Arial, Verdana, Sans-serif !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+#ecww-summary p {
+    font: bold 18px/1.5 Helvetica, Arial, Verdana, Sans-serif !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+#ecww-monthlypayment p {
+    font: bold 24px/1.5 Helvetica, Arial, Verdana, Sans-serif !important;
+    text-align: center !important;
+}
+#ecww-piechart {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    height: 215px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    width: 240px !important;
+    float: left !important;
+}
+#ecww-more {
+    background: #444444 !important;
+    font: normal 13px/1 Helvetica, Arial, Verdana, Sans-serif !important;
+    padding: 10px 0 !important;
+    color: #FFF !important;
+    text-align: center !important;
+    width: 780px !important;
+    clear: both !important;
+    margin: 0 !important;
+    clear: both !important;
+    float: left !important;
+}
+#ecww-more a, #ecww-more a:visited {
+    background: #444444 !important;
+    color: #FFF !important;
+    text-decoration: none !important;
+    border-bottom: 1px dotted #cccccc !important;
+}
+#ecww-more a:hover {
+    background: #444444 !important;
+    color: #FFF !important;
+    text-decoration: none !important;
+    border-bottom: 0 none !important;
+}

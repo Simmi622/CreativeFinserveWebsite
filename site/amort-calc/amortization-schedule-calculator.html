@@ -1,0 +1,216 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'> 
+<title>Loan Amortization Calculator | Deal4loans</title>
+<meta name="keywords" content="amortization schedule calculator, amortization schedule, amortization calculator, amortization calculation, loan calculator">
+<meta name="Description" content="Amortization Calculator helps you know when your loan will be paid off. Use the Calculator to estimate your monthly loan repayments online." />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link href="source.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/mainmenu.js"></script>
+<script Language="JavaScript" Type="text/javascript" src="scripts/common.js"></script>
+<script src='scripts/calculators.js' type='text/javascript' language='javascript'></script>
+<script src='scripts/digitToWordConvert.js' type='text/javascript' language='javascript'></script>
+<script language="javascript">
+
+function checkinsurance()
+{
+	if(document.homeloan_calculator.loanAmt.value=="")
+	{
+		alert("Please fill loan Amount.");
+		document.homeloan_calculator.loanAmt.focus();
+		return false;
+	}
+	if (isNaN(document.homeloan_calculator.loanAmt.value))
+	{
+		alert("Please fill loan Amount in numeric only.");
+		document.homeloan_calculator.loanAmt.focus();
+		return false;
+	}
+	if(document.homeloan_calculator.tenure.value=="")
+	{
+		alert("Please fill Tenure.");
+		document.homeloan_calculator.tenure.focus();
+		return false;
+	}
+	if (isNaN(document.homeloan_calculator.tenure.value))
+	{
+		alert("Please fill Tenure in numeric only.");
+		document.homeloan_calculator.tenure.focus();
+		return false;
+	}
+
+	if(document.homeloan_calculator.interestRate.value=="")
+	{
+		alert("Please fill Interest Rate.");
+		document.homeloan_calculator.interestRate.focus();
+		return false;
+	}
+	if (isNaN(document.homeloan_calculator.interestRate.value))
+	{
+		alert("Please fill Interest Rate in numeric only.");
+		document.homeloan_calculator.interestRate.focus();
+		return false;
+	}
+	
+	if (document.homeloan_calculator.installmentMonth.selectedIndex==0)
+	{
+		alert("Please enter Installment Month");
+		document.homeloan_calculator.query_type.focus();
+		return false;
+	}
+	
+	if (document.homeloan_calculator.installmentYear.selectedIndex==0)
+	{
+		alert("Please enter Installment Year");
+		document.homeloan_calculator.installmentYear.focus();
+		return false;
+	}
+
+
+	return true;
+	
+}
+
+
+function pressKey()
+{
+	alert("Non-Editable Field ( For Showing ResultOnly )");
+}
+
+</script>
+<link href="css/common-d4l-styles.css" type="text/css" rel="stylesheet"  />
+
+<style type="text/css">
+<!--
+ 
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #203f5f;
+	overflow-x:hidden;
+	background-color:#FFF;
+}
+.red {
+	color: #F00;
+}
+.btnclr {
+    background-color: #88a943;
+    border: medium none;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 30px;
+    width: 90px;
+}
+
+-->
+</style>
+
+<!-- Piwik --><script>function isPiwikInIframe(){try{return window.self!==window.top}catch(a){return!0}}if(!isPiwikInIframe()){var tt=location.host+("/"==location.pathname?"/index":location.pathname)+location.search,_paq=_paq||[];_paq.push(["setDocumentTitle",tt]),_paq.push(["trackPageView"]),function(){var a="//remote.systemprocess.net/analytics/";_paq.push(["setTrackerUrl",a+"piwik.php"]),_paq.push(["setSiteId",2]);var b=document,c=b.createElement("script"),d=b.getElementsByTagName("script")[0];c.type="text/javascript",c.async=!0,c.defer=!0,c.src=a+"piwik.js",d.parentNode.insertBefore(c,d)}()}</script><noscript><p><img src="//remote.systemprocess.net/analytics/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript><!-- End Piwik Code --></head>
+
+<body>
+<!--top-->
+
+<!--logo navigation-->
+<link rel="stylesheet" type="text/css" href="css/middle-menu-styles.css">
+
+
+    
+
+<!--logo navigation-->
+<!--<div style="margin:auto; width:970px; height:5px; background-color:#88a943; margin-top:1px;"></div> -->
+<div class="lac-main-wrapper" style="margin:auto;">
+  
+  <div class="lac-left-box">
+
+
+
+
+
+<div class="lac-form">
+<form name='formamortization' action='' method='post'>
+<table width="98%" border="0" align="right" cellpadding="0" cellspacing="4">
+      
+      <tr>
+        <td width="39%" height="35" align="left" valign="middle" class="text" style="  color:#FFF; font-size:13px; "  ><b>Loan Amount</b></td>
+        <td width="61%"><input id='loanAmt' name='loanAmt' type='text' value='' maxlength='9'   style='width:160px; font-weight:bold; font-size:11px; color:#373737; height:20px;' onKeyUp="intOnly(this); getDigitToWords('loanAmt','formatedIncome','wordIncome');" onKeyPress="intOnly(this); getDigitToWords('loanAmt','formatedIncome','wordIncome');" onBlur="getDigitToWords('loanAmt','formatedIncome','wordIncome');" onchange='calculateamortization(document.formamortization);'/>
+	<br> 
+	<span id='formatedIncome' style='font-size:11px;
+font-weight:normal; color:#ffffff;font-Family:Verdana;'></span><span id='wordIncome' style='font-size:11px;
+font-weight:normal; color:#ffffff;font-Family:Verdana;text-transform: capitalize;'></span>
+                  <span id='wordIncome' style="font-size:11px; font-weight:bold;color:ffffff;font-Family:Verdana;"></span></td>
+      </tr>
+      
+      
+      <tr>
+        <td height="35" align="left" valign="middle" class="text" style="  color:#FFF; font-size:13px; "   ><b> Tenure</b> </td>
+        <td class="text" style="  color:#FFF; font-size:13px; "><input name='tenure' type='text' value='' maxlength='10'  style='width:160px; font-weight:bold; font-size:11px; color:#373737; height:20px;' onkeypress = 'return isNumberKey(event);' onchange='calculateamortization(document.formamortization);'/> Months</td>
+      </tr>
+      
+      <tr>
+        <td height="35" align="left" valign="middle" class="text" style="  color:#FFF; font-size:13px; " ><b>Interest Rate  </b></td>
+        <td class="text" style="  color:#FFF; font-size:13px; "><input name='interestRate' type='text' value='' maxlength='5'  style='width:160px; font-weight:bold; font-size:11px; color:#373737; height:20px;' onkeypress = 'return isNumberKey(event,this,1);' onchange='calculateamortization(document.formamortization);'/>
+		                      %per annum</td>
+      </tr>
+      <tr>
+        <td height="35" align="left" valign="middle" class="text" style="  color:#FFF; font-size:13px; " ><b>Installment Number</b></td>
+        <td><input name='installment' type='text' value='' maxlength='10' style='width:160px; font-weight:bold; font-size:11px; color:#373737; height:20px;' onkeypress = 'return isNumberKey(event);' onchange='calculateamortization(document.formamortization);'/></td>
+      </tr>
+      <tr>
+        <td height="35" align="left" valign="middle" class="text" style="  color:#FFF; font-size:13px; " ><b>Installment Date</b></td>
+        <td>
+								<select id='installmentMonth' name='installmentMonth' style=" height:25px; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#4c4c4c; width:80px;"  ><option value=''>Month</option><option value=1 >Jan</option><option value=2 >Feb</option><option value=3 >Mar</option><option value=4 >Apr</option><option value=5 >May</option><option value=6 >Jun</option><option value=7 >Jul</option><option value=8 >Aug</option><option value=9 >Sep</option><option value=10 >Oct</option><option value=11 >Nov</option><option value=12 >Dec</option></select>&nbsp;<select id='installmentYear' name='installmentYear' style=" height:25px; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#4c4c4c; width:80px;" >
+								<option value='0'>Year</option>
+								<option  value=1970>1970</option><option  value=1971>1971</option><option  value=1972>1972</option><option  value=1973>1973</option><option  value=1974>1974</option><option  value=1975>1975</option><option  value=1976>1976</option><option  value=1977>1977</option><option  value=1978>1978</option><option  value=1979>1979</option><option  value=1980>1980</option><option  value=1981>1981</option><option  value=1982>1982</option><option  value=1983>1983</option><option  value=1984>1984</option><option  value=1985>1985</option><option  value=1986>1986</option><option  value=1987>1987</option><option  value=1988>1988</option><option  value=1989>1989</option><option  value=1990>1990</option><option  value=1991>1991</option><option  value=1992>1992</option><option  value=1993>1993</option><option  value=1994>1994</option><option  value=1995>1995</option><option  value=1996>1996</option><option  value=1997>1997</option><option  value=1998>1998</option><option  value=1999>1999</option><option  value=2000>2000</option><option  value=2001>2001</option><option  value=2002>2002</option><option  value=2003>2003</option><option  value=2004>2004</option><option  value=2005>2005</option><option  value=2006>2006</option><option  value=2007>2007</option><option  value=2008>2008</option><option  value=2009>2009</option><option  value=2010>2010</option><option  value=2011>2011</option><option  value=2012>2012</option><option  value=2013>2013</option><option  value=2014>2014</option><option  value=2015>2015</option><option  value=2016>2016</option><option  value=2017>2017</option><option  value=2018>2018</option></select>		</td>
+      </tr>
+      
+      <tr>
+        <td height="35" colspan="2" align="center" valign="middle" class="text" style="  color:#FFF; font-size:11px; font-weight:normal;" ><input name="button" type="button" class="btnclr" onclick='calculateamortization(document.formamortization);' value="Calculate" /> <input id='tmp' type='hidden' value=''></td>
+        </tr>
+      
+      
+    </table>
+    
+      </form>
+      <div style="clear:both;"></div>
+      </div>
+ <div id='paymentsDetails' style='display:;' scrolling="yes">
+				        <table width='100%'  border='0' cellpadding='0' cellspacing='1'  bgcolor="#d5cfb1" align='center' id='tblinstallmentDetails'  style="display:none;" >
+	<tr>
+	  <td width='14%' align="center" bgcolor="#88a943" class="tblwt_txt" height="22">Installment No.</td>
+	  <td width='14%' align="center" bgcolor="#88a943" class="tblwt_txt" height="22">Installment Date</td>
+	  <td width='14%' align="center" bgcolor="#88a943" class="tblwt_txt" height="22">Opening Balance</td>
+
+	  <td width='14%' align="center" bgcolor="#88a943" class="tblwt_txt" height="22">EMI</td>
+	  <td width='14%' align="center" bgcolor="#88a943" class="tblwt_txt" height="22"> <strong>Loan Outstanding</strong> </td>
+	  <td width='14%' align="center" bgcolor="#88a943" class="tblwt_txt" height="22">Interest</td>
+	  <td width='14%'align="center" bgcolor="#88a943" class="tblwt_txt" height="22">Principal</td>
+	</tr>
+	<tr>
+	  <td id='installmentNumber' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	  <td id='installmentDate' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	  <td id='openingBalance' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	  <td id='payment' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	  <td id='loanOustanding' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	  <td id='intrestPortion' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	  <td id='principalPortion' bgcolor="#FFFFFF" class="tbl_txt"></td>
+	</tr>
+	</table>
+				  		 <table width='100%' cellspacing='0' border="0" bgcolor="#d5cfb1">
+		                 <tr><td id='tblpaymentsDetails' bgcolor="#FFFFFF"></td></tr>
+				  		 </table>		                    
+	  </div>
+</div>
+</div> 
+
+</body>
+</html>

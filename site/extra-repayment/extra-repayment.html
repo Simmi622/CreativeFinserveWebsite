@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
+	<title>Extra repayments calculator for loan</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+    <!-- Stylesheet -->
+	<link href="css/gbst_styles.css" media="all" rel="stylesheet" type="text/css" />
+	
+	<script src="js/jquery-1.7.2-min.js" type="text/javascript"></script>
+	<script src="js/extra-repayments-lib.js" type="text/javascript"></script>
+	<script src="js/extra-repayments-config.js" type="text/javascript"></script>
+	<script src="js/extra-repayments-app.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+		$(window).ready(function(){
+			loadTool();	
+		});
+		var __loancalculator = null;
+		var calculator = null;
+		
+		var loadTool = function(){
+			__loancalculator = gbst.module("gbst.loan.app.extrarepaymentscalculator");
+			var container = $(".extra-repayments-calculator-app");
+			container.empty();
+			if ((parent.hasOwnProperty && parent.hasOwnProperty("setIframeHeight")) ||
+				Object.prototype.hasOwnProperty.call(parent, "setIframeHeight")) {
+				container.resize(function(e){
+					parent.setIframeHeight(container.height());
+				})
+			};
+			calculator = new __loancalculator.LoanCalculatorApp(container);
+			calculator.init();
+		};
+		</script>
+
+<div class="extra-repayments-calculator-app"></div>
+
+  </body>
+</html>
